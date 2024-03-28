@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Web Page</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+
+    <div id="travelmap"></div>
+
+    <style>
+      #travelmap {
+        width: 100%;
+        height: 500px;
+      }
+      .amcharts-chart-div a {
+        display: none !important;
+      }
+    </style>
+
+    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+    <script>
+      const targetSVG =
+        "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
+
+      const cities = [
+        {
+          title: "New York",
+          latitude: 40.7128,
+          longitude: -74.006,
+        },
+        {
+          title: "Chicago",
+          latitude: 41.8781,
+          longitude: -87.6298,
+        },
+        {
+          title: "Indianapolis",
+          latitude: 39.7684,
+          longitude: -86.1581,
+        },
+        {
+          title: "San Francisco",
+          latitude: 37.7749,
+          longitude: -122.4194,
+        },
+        {
+          title: "Boston",
+          latitude: 42.3601,
+          longitude: -71.0589,
+        },
+        {
+          title: "Hartford",
+          latitude: 41.7637,
+          longitude: -72.6851,
+        },
+        {
+          title: "Denver",
+          latitude: 39.7392,
+          longitude: -104.99,
+        },
+        {
+          title: "Nashville",
+          latitude: 36.1627,
+          longitude: -86.7816,
+        },
+        {
+          title: "Las Vegas",
+          latitude: 36.1699,
+          longitude: -115.1398,
+        },
+        {
+          title: "Milwaukee",
+          latitude: 43.0389,
+          longitude: -87.9065,
+        },
+        {
+          title: "Kansas City",
+          latitude: 39.0997,
+          longitude: -94.5786,
+        },
+        {
+          title: "Miami",
+          latitude: 25.7617,
+          longitude: -80.1918,
+        },
+        {
+          title: "Raleigh",
+          latitude: 35.7796,
+          longitude: -78.6382,
+        },
+        {
+          title: "London",
+          latitude: 51.5074,
+          longitude: -0.1278,
+        },
+        {
+          title: "Stonehenge",
+          latitude: 51.1789,
+          longitude: -1.8262,
+        },
+        {
+          title: "Paris",
+          latitude: 48.8566,
+          longitude: 2.3522,
+        },
+        {
+          title: "Brussels",
+          latitude: 50.8503,
+          longitude: 4.3517,
+        },
+        {
+          title: "Amsterdam",
+          latitude: 52.3676,
+          longitude: 4.9041,
+        },
+        {
+          title: "Berlin",
+          latitude: 52.52,
+          longitude: 13.405,
+        },
+        {
+          title: "Prague",
+          latitude: 50.0755,
+          longitude: 14.4378,
+        },
+        {
+          title: "Vienna",
+          latitude: 48.2082,
+          longitude: 16.3738,
+        },
+        {
+          title: "Budapest",
+          latitude: 47.4979,
+          longitude: 19.0402,
+        },
+        {
+          title: "Venice",
+          latitude: 45.4408,
+          longitude: 12.3155,
+        },
+        {
+          title: "Florence",
+          latitude: 43.7696,
+          longitude: 11.2558,
+        },
+        {
+          title: "Rome",
+          latitude: 41.9028,
+          longitude: 12.4964,
+        },
+        {
+          title: "Cinque Terre",
+          latitude: 44.1286,
+          longitude: 9.7126,
+        },
+      ].map((city) => ({
+        ...city,
+        zoomLevel: 5,
+        scale: 0.5,
+        svgPath: targetSVG,
+      }));
+
+      const map = AmCharts.makeChart("travelmap", {
+        type: "map",
+        projection: "mercator",
+        theme: "light",
+        imagesSettings: {
+          rollOverColor: "#089282",
+          rollOverScale: 3,
+          selectedScale: 3,
+          selectedColor: "#089282",
+          color: "#13564e",
+        },
+        areasSettings: {
+          autoZoom: true,
+          unlistedAreasColor: "#15A892",
+          outlineThickness: 1,
+          color: "#B4B4B7",
+          colorSolid: "#84ADE9",
+          selectedColor: "#84ADE9",
+          outlineColor: "#666666",
+          rollOverColor: "#9EC2F7",
+          rollOverOutlineColor: "#000000",
+        },
+        dataProvider: {
+          map: "worldHigh",
+          getAreasFromMap: true,
+          images: cities,
+          areas: [{ id: "US", showAsSelected: false }],
+        },
+        export: {
+          enabled: false,
+        },
+      });
+    </script>
+  </body>
+</html>
