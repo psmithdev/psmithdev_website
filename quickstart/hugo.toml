@@ -1,4 +1,27 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Parker Smith'
 theme = 'paper'
+
+[params]
+  # color style
+  color = 'linen'                           # linen, wheat, gray, light
+
+  # header social icons
+  twitter = 'psmithdev'               # twitter.com/YOUR_TWITTER_ID
+  github = 'psmithdev'                 # github.com/YOUR_GITHUB_ID
+  linkedin = 'parkersmith1/'             # linkedin.com/in/YOUR_LINKEDIN_ID
+  threads = '@YOUR_THREADS_ID'              # threads.net/@YOUR_THREADS_ID
+  rss = true                                # show rss icon
+
+  # home page profile
+  avatar = 'https://gravatar.com/avatar/eb547f5698b80381eba161d06cb882f9?size=256&cache=1715103959762'                 # gravatar email or image url
+  name = 'Parker Smith'
+  bio = 'Maker of things big and small'
+
+
+  # misc
+  disableHLJS = true                        # disable highlight.js
+  disablePostNavigation = false              # disable post navigation
+  monoDarkIcon = true                       # show monochrome dark mode icon
+  math = true                               # enable KaTeX math typesetting globally

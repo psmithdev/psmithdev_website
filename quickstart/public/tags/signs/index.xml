@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Signs on Parker Smith</title>
+    <link>http://localhost:1313/tags/signs/</link>
+    <description>Recent content in Signs on Parker Smith</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/signs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sign Making and Plaques</title>
+      <link>http://localhost:1313/posts/sign-making-and-plaques/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sign-making-and-plaques/</guid>
+      <description>Laundry Happy Birthday hnode.com/res/hashnode/image/upload/v1641050317401/tfpige3az.jpeg)</description>
+    </item>
+  </channel>
+</rss>

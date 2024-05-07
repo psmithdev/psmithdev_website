@@ -1,11 +1,291 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
+    <title>Tags on Parker Smith</title>
     <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <description>Recent content in Tags on Parker Smith</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Art</title>
+      <link>http://localhost:1313/tags/art/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/art/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Austria</title>
+      <link>http://localhost:1313/tags/austria/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/austria/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Baby</title>
+      <link>http://localhost:1313/tags/baby/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/baby/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bed Frame</title>
+      <link>http://localhost:1313/tags/bed-frame/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bed-frame/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Belgium</title>
+      <link>http://localhost:1313/tags/belgium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/belgium/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Birdhouse</title>
+      <link>http://localhost:1313/tags/birdhouse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/birdhouse/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bridge</title>
+      <link>http://localhost:1313/tags/bridge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bridge/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chicago</title>
+      <link>http://localhost:1313/tags/chicago/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/chicago/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cutting Boards</title>
+      <link>http://localhost:1313/tags/cutting-boards/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cutting-boards/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Czech-Republic</title>
+      <link>http://localhost:1313/tags/czech-republic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/czech-republic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deck</title>
+      <link>http://localhost:1313/tags/deck/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/deck/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Family</title>
+      <link>http://localhost:1313/tags/family/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/family/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Festival</title>
+      <link>http://localhost:1313/tags/festival/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/festival/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>France</title>
+      <link>http://localhost:1313/tags/france/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/france/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Furniture</title>
+      <link>http://localhost:1313/tags/furniture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/furniture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Germany</title>
+      <link>http://localhost:1313/tags/germany/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/germany/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>High Chair</title>
+      <link>http://localhost:1313/tags/high-chair/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/high-chair/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Homesteading</title>
+      <link>http://localhost:1313/tags/homesteading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/homesteading/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hungary</title>
+      <link>http://localhost:1313/tags/hungary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hungary/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Italy</title>
+      <link>http://localhost:1313/tags/italy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/italy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Maintenance</title>
+      <link>http://localhost:1313/tags/maintenance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/maintenance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Music</title>
+      <link>http://localhost:1313/tags/music/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/music/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pens</title>
+      <link>http://localhost:1313/tags/pens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pens/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Plaques</title>
+      <link>http://localhost:1313/tags/plaques/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/plaques/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/tags/programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Psychedelics</title>
+      <link>http://localhost:1313/tags/psychedelics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/psychedelics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Public Art</title>
+      <link>http://localhost:1313/tags/public-art/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/public-art/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sailboat</title>
+      <link>http://localhost:1313/tags/sailboat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sailboat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Sufficiency</title>
+      <link>http://localhost:1313/tags/self-sufficiency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/self-sufficiency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Serving Trays</title>
+      <link>http://localhost:1313/tags/serving-trays/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/serving-trays/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Signs</title>
+      <link>http://localhost:1313/tags/signs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/signs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Soap</title>
+      <link>http://localhost:1313/tags/soap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/soap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>http://localhost:1313/tags/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Travel</title>
+      <link>http://localhost:1313/tags/travel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/travel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Trestle Bed</title>
+      <link>http://localhost:1313/tags/trestle-bed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/trestle-bed/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Turning</title>
+      <link>http://localhost:1313/tags/turning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/turning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>United-Kingdom</title>
+      <link>http://localhost:1313/tags/united-kingdom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/united-kingdom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Woodworking</title>
+      <link>http://localhost:1313/tags/woodworking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/woodworking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Woodworking School</title>
+      <link>http://localhost:1313/tags/woodworking-school/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/woodworking-school/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workshop</title>
+      <link>http://localhost:1313/tags/workshop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/workshop/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

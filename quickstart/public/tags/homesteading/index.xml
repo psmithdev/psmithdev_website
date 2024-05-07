@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homesteading on Parker Smith</title>
+    <link>http://localhost:1313/tags/homesteading/</link>
+    <description>Recent content in Homesteading on Parker Smith</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/homesteading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Soapmaking</title>
+      <link>http://localhost:1313/posts/soapmaking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/soapmaking/</guid>
+      <description>Part of being self-sufficient is knowing how to make your own stuff, and piggy backing off of bread, now I&amp;rsquo;ll introduce soap. Coincidentally, the recipe I am using is just 4 ingredients, but this time I won&amp;rsquo;t be eating them haha!&#xA;Recipe: https://thethingswellmake.com/wprm_print/10856&#xA;Made a simple and sturdy wood soap mold with plastic dividers.&#xA;Laughable at how the names turned out. So many lessons learned when de-molding.</description>
+    </item>
+  </channel>
+</rss>

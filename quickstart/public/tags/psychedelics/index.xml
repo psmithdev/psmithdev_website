@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Psychedelics on Parker Smith</title>
+    <link>http://localhost:1313/tags/psychedelics/</link>
+    <description>Recent content in Psychedelics on Parker Smith</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/psychedelics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Psychedelic Science 2023</title>
+      <link>http://localhost:1313/posts/psychedelic-science-2023/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/psychedelic-science-2023/</guid>
+      <description>My Experience The Psychedelic Science 2023 conference was an immersive and enlightening experience for me. As soon as I entered the Colorado Convention Center, I was met with an atmosphere charged with the energy and anticipation of thousands of attendees, each there with the shared goal of exploring and understanding the world of psychedelics.&#xA;What I Learned Throughout the five-day conference, I attended numerous lectures, panels, and workshops led by experts in the field.</description>
+    </item>
+  </channel>
+</rss>

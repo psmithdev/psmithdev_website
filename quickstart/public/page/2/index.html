@@ -30,6 +30,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html
   class="not-ready lg:text-base"
   style="--bg: #faf8f1"
@@ -44,7 +58,7 @@
   />
 
   
-  <title>My New Hugo Site</title>
+  <title>Parker Smith</title>
 
   
   <meta name="theme-color" />
@@ -58,7 +72,7 @@
     name="description"
     content="A personal blog"
   />
-  <meta name="author" content="My New Hugo Site" />
+  <meta name="author" content="Parker Smith" />
   
 
   
@@ -74,20 +88,69 @@
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="http://localhost:1313/theme.svg" />
 
   
   
   
   
-  
-
-  
+  <link rel="preload" as="image" href="https://gravatar.com/avatar/eb547f5698b80381eba161d06cb882f9?size=256&amp;cache=1715103959762" />
   
   
 
   
   
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/threads.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
 
   
   
@@ -111,10 +174,10 @@
     <a
       class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
       href="http://localhost:1313/"
-      >My New Hugo Site</a
+      >Parker Smith</a
     >
     <div
-      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
       role="button"
       aria-label="Dark"
     ></div>
@@ -178,6 +241,62 @@
     
 
     
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/psmithdev"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/psmithdev"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/parkersmith1/"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./threads.svg)"
+        href="https://threads.net/@YOUR_THREADS_ID"
+        target="_blank"
+        rel="me"
+      >
+        threads
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://localhost:1313/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
   </div>
 </header>
 
@@ -204,11 +323,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Amsterdam, The Netherlands</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Cutting Boards and Serving Trays</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/amsterdam-the-netherlands/">Amsterdam, The Netherlands</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/cutting-boards-and-serving-trays/">Cutting Boards and Serving Trays</a>
 </section>
 
 
@@ -217,11 +336,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">London, United Kingdom</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Electric Daisy Carnival</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/london-united-kingdom/">London, United Kingdom</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/electric-daisy-carnival/">Electric Daisy Carnival</a>
 </section>
 
 
@@ -230,76 +349,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Berlin, Germany</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Fine Furniture Making</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/berlin-germany/">Berlin, Germany</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Paris, France</h2>
-  <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/paris-france/">Paris, France</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Zagarolo, Italy</h2>
-  <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/zagarolo-italy/">Zagarolo, Italy</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Vienna, Austria</h2>
-  <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/vienna-austria/">Vienna, Austria</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Budapest, Hungary</h2>
-  <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/budapest-hungary/">Budapest, Hungary</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Venice, Italy</h2>
-  <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/venice-italy/">Venice, Italy</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/fine-furniture-making/">Fine Furniture Making</a>
 </section>
 
 
@@ -310,7 +364,7 @@
   
   <h2 class="!my-0 pb-1 font-bold !leading-none">Florence, Italy</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
+    >Jan 1, 1</time
   >
   <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/florence-italy/">Florence, Italy</a>
 </section>
@@ -321,11 +375,76 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Brussels, Belgium</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Giant wooden hearts on the Connecticut State Capitol lawn</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jan 6, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/brussels-belgium/">Brussels, Belgium</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/giant-wooden-hearts-on-the-connecticut-state-capitol-lawn/">Giant wooden hearts on the Connecticut State Capitol lawn</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Glass Flower Storage Box</h2>
+  <time class="text-sm antialiased opacity-60"
+    >Jan 1, 1</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/glass-flower-storage-box/">Glass Flower Storage Box</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Godfather Steve&#39;s Deck</h2>
+  <time class="text-sm antialiased opacity-60"
+    >Jan 1, 1</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/godfather-steves-deck/">Godfather Steve&#39;s Deck</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Grandma&#39;s Backyard Brook Footbridge</h2>
+  <time class="text-sm antialiased opacity-60"
+    >Jan 1, 1</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/grandmas-backyard-brook-footbridge/">Grandma&#39;s Backyard Brook Footbridge</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Grandpa&#39;s Workshop</h2>
+  <time class="text-sm antialiased opacity-60"
+    >Jan 1, 1</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/grandpas-workshop/">Grandpa&#39;s Workshop</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Half and full marathon training log</h2>
+  <time class="text-sm antialiased opacity-60"
+    >Jan 1, 1</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/half-and-full-marathon-training-log/">Half and full marathon training log</a>
 </section>
 
 
@@ -351,7 +470,7 @@
 >
   <div class="mr-auto">
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">My New Hugo Site</a>
+    <a class="link" href="http://localhost:1313/">Parker Smith</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
     >Powered by Hugo️️</a

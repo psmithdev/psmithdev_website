@@ -30,6 +30,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html
   class="not-ready lg:text-base"
   style="--bg: #faf8f1"
@@ -44,7 +58,7 @@
   />
 
   
-  <title>My New Hugo Site</title>
+  <title>Parker Smith</title>
 
   
   <meta name="theme-color" />
@@ -58,7 +72,7 @@
     name="description"
     content="A personal blog"
   />
-  <meta name="author" content="My New Hugo Site" />
+  <meta name="author" content="Parker Smith" />
   
 
   
@@ -74,20 +88,69 @@
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="http://localhost:1313/theme.svg" />
 
   
   
   
   
-  
-
-  
+  <link rel="preload" as="image" href="https://gravatar.com/avatar/eb547f5698b80381eba161d06cb882f9?size=256&amp;cache=1715103959762" />
   
   
 
   
   
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/threads.svg" />
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
 
   
   
@@ -111,10 +174,10 @@
     <a
       class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
       href="http://localhost:1313/"
-      >My New Hugo Site</a
+      >Parker Smith</a
     >
     <div
-      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
       role="button"
       aria-label="Dark"
     ></div>
@@ -178,6 +241,62 @@
     
 
     
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/psmithdev"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/psmithdev"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/parkersmith1/"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./threads.svg)"
+        href="https://threads.net/@YOUR_THREADS_ID"
+        target="_blank"
+        rel="me"
+      >
+        threads
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://localhost:1313/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
   </div>
 </header>
 
@@ -204,16 +323,38 @@
 
 
 
+<div class="-mt-2 mb-16 flex items-center">
+  
+  <div
+    class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 shadow dark:bg-white/[15%]"
+  >
+    <img
+      class="my-0 aspect-square w-16 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
+      src="https://gravatar.com/avatar/eb547f5698b80381eba161d06cb882f9?size=256&amp;cache=1715103959762"
+      alt="Parker Smith"
+    />
+  </div>
+  
+  
+  <div>
+    <h1 class="mb-2 mt-3 text-[1.6rem] font-bold">Parker Smith</h1>
+    <div class="break-words">
+      Maker of things big and small
+    </div>
+  </div>
+  
+</div>
+
 
 
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Psychedelic Science 2023</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none"></h2>
   <time class="text-sm antialiased opacity-60"
-    >Jun 28, 2023</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/psychedelic-science-2023/">Psychedelic Science 2023</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/giraffehello/"></a>
 </section>
 
 
@@ -222,11 +363,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Zen Meditation</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none"></h2>
   <time class="text-sm antialiased opacity-60"
-    >Jun 8, 2023</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/zen-meditation/">Zen Meditation</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/readme/"></a>
 </section>
 
 
@@ -235,24 +376,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Hiking with Tyler</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Amsterdam, The Netherlands</h2>
   <time class="text-sm antialiased opacity-60"
-    >Nov 18, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/hiking-with-tyler/">Hiking with Tyler</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Missouri Nursing Homes Grandma 2022</h2>
-  <time class="text-sm antialiased opacity-60"
-    >Nov 9, 2022</time
-  >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/missouri-nursing-homes-grandma-2022/">Missouri Nursing Homes Grandma 2022</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/amsterdam-the-netherlands/">Amsterdam, The Netherlands</a>
 </section>
 
 
@@ -263,7 +391,7 @@
   
   <h2 class="!my-0 pb-1 font-bold !leading-none">Arch Linux Dell XPS 13 9343</h2>
   <time class="text-sm antialiased opacity-60"
-    >Oct 4, 2022</time
+    >Jan 1, 1</time
   >
   <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/arch-linux-dell-xps-13-9343/">Arch Linux Dell XPS 13 9343</a>
 </section>
@@ -274,11 +402,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Lessons from IF (intermittent fasting)</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Baby High Chair</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jul 7, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/lessons-from-if-intermittent-fasting/">Lessons from IF (intermittent fasting)</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/baby-high-chair/">Baby High Chair</a>
 </section>
 
 
@@ -287,11 +415,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Half and full marathon training log</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Berlin, Germany</h2>
   <time class="text-sm antialiased opacity-60"
-    >Apr 12, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/half-and-full-marathon-training-log/">Half and full marathon training log</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/berlin-germany/">Berlin, Germany</a>
 </section>
 
 
@@ -300,11 +428,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Sailboat Maintenance</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Birdhouse</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jan 16, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/sailboat-maintenance/">Sailboat Maintenance</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/birdhouse/">Birdhouse</a>
 </section>
 
 
@@ -313,11 +441,11 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Electric Daisy Carnival</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Bread!</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jan 16, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/electric-daisy-carnival/">Electric Daisy Carnival</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/bread/">Bread!</a>
 </section>
 
 
@@ -326,11 +454,24 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
-  <h2 class="!my-0 pb-1 font-bold !leading-none">Tomorrowland</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Brussels, Belgium</h2>
   <time class="text-sm antialiased opacity-60"
-    >Jan 11, 2022</time
+    >Jan 1, 1</time
   >
-  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/tomorrowland/">Tomorrowland</a>
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/brussels-belgium/">Brussels, Belgium</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Budapest, Hungary</h2>
+  <time class="text-sm antialiased opacity-60"
+    >Jan 1, 1</time
+  >
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/posts/budapest-hungary/">Budapest, Hungary</a>
 </section>
 
 
@@ -354,7 +495,7 @@
 >
   <div class="mr-auto">
     &copy; 2024
-    <a class="link" href="http://localhost:1313/">My New Hugo Site</a>
+    <a class="link" href="http://localhost:1313/">Parker Smith</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
     >Powered by Hugo️️</a

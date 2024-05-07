@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maintenance on Parker Smith</title>
+    <link>http://localhost:1313/tags/maintenance/</link>
+    <description>Recent content in Maintenance on Parker Smith</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/maintenance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sailboat Maintenance</title>
+      <link>http://localhost:1313/posts/sailboat-maintenance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sailboat-maintenance/</guid>
+      <description>1986 Galilee 15 sailboat Beam 6&#39;8&#39; Weight 525 lbs Sail Area Main 75 sq. ft. Jib 35 sq. ft.&#xA;the perfect environment for anyone interested in boatbuilding, repair, design, woodworking, metalworking, sailing, and so much more.&#xA;Welding Where is my hammer Motor mount for running in a bucket</description>
+    </item>
+  </channel>
+</rss>

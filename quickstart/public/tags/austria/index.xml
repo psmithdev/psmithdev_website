@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Austria on Parker Smith</title>
+    <link>http://localhost:1313/tags/austria/</link>
+    <description>Recent content in Austria on Parker Smith</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/austria/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vienna, Austria</title>
+      <link>http://localhost:1313/posts/vienna-austria/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/vienna-austria/</guid>
+      <description>Donauinselfest is a free open-air music festival which occurs annually at Donauinsel in Vienna, Austria https://donauinselfest.at/</description>
+    </item>
+  </channel>
+</rss>

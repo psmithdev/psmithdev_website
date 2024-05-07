@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chicago on Parker Smith</title>
+    <link>http://localhost:1313/tags/chicago/</link>
+    <description>Recent content in Chicago on Parker Smith</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/chicago/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electric Daisy Carnival</title>
+      <link>http://localhost:1313/posts/electric-daisy-carnival/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/electric-daisy-carnival/</guid>
+      <description>And Larry and Kumail</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>High Chair on Parker Smith</title>
+    <link>http://localhost:1313/tags/high-chair/</link>
+    <description>Recent content in High Chair on Parker Smith</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/high-chair/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Baby High Chair</title>
+      <link>http://localhost:1313/posts/baby-high-chair/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/baby-high-chair/</guid>
+      <description>My Grandpa and Grandma&amp;rsquo;s children, Aunt Linda and Mom Paula, were the first to sit in the high chair Next added were their grandchildren and great grandchildren Third generation Siena checks out the names of those who sat before her, which includes her mom Kelly! </description>
+    </item>
+  </channel>
+</rss>
