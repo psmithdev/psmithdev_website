@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Jul 2023 16:25:39 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zen Meditation</title>
+      <link>http://localhost:1313/posts/zen-meditation/</link>
+      <pubDate>Thu, 08 Jun 2023 15:27:20 +0000</pubDate>
+      <guid>http://localhost:1313/posts/zen-meditation/</guid>
+      <description>Lately, my consistency with a mindfulness practice has been sticking. I first learned what is meditation in college and went down the rabbit hole of every app under the sun to try. Headspace, Calm, you name it. My current favorite is &amp;ldquo;Waking Up&amp;rdquo; by Sam Harris. These days, I prefer silence for long periods.&#xA;My saving grace has been finding a Zen Center from the suggestion of a friend I met at Esalen Institute.</description>
+    </item>
+    <item>
+      <title>Hello WORLD</title>
+      <link>http://localhost:1313/posts/hello-world--deleted/</link>
+      <pubDate>Sat, 04 Dec 2021 22:07:35 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hello-world--deleted/</guid>
+      <description>the quick brown fox</description>
+    </item>
+  </channel>
+</rss>
