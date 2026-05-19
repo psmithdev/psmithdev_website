@@ -1,0 +1,88 @@
+---
+const nav = [
+  { href: '/essays', label: 'Essays' },
+  { href: '/travel', label: 'Travel' },
+  { href: '/making', label: 'Making' },
+  { href: '/about', label: 'About' },
+];
+const path = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="wide header-row">
+    <a href="/" class="brand">Parker Smith</a>
+    <nav>
+      <ul>
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[{ active: path.startsWith(item.href) }]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--rule);
+    padding: 1.4rem 0;
+    background: var(--bg);
+  }
+
+  .header-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .brand {
+    font-family: var(--font-serif);
+    font-size: var(--step-1);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 1.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+  }
+
+  nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: var(--accent);
+  }
+
+  @media (max-width: 540px) {
+    .header-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    nav ul {
+      gap: 1rem;
+    }
+  }
+</style>

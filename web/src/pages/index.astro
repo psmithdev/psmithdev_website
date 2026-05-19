@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+
+const travel = (await getCollection('travel', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+
+const recent = [...posts, ...travel]
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 6);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+
+const linkFor = (entry: (typeof recent)[number]) =>
+  entry.collection === 'travel'
+    ? `/travel/${entry.slug}/`
+    : `/posts/${entry.slug}/`;
+---
+
+<BaseLayout>
+  <section class="hero reading">
+    <p class="eyebrow">Parker Smith</p>
+    <h1>Travel, essays, and things made by hand.</h1>
+    <p class="lede">
+      I write about places I've been, things I've built, and what I'm learning
+      along the way. Welcome — pull up a chair.
+    </p>
+  </section>
+
+  <section class="recent wide">
+    <header class="section-head">
+      <h2>Recent writing</h2>
+      <a href="/essays" class="more">All essays →</a>
+    </header>
+
+    {
+      recent.length === 0 ? (
+        <p class="muted">
+          No posts yet. Content migration lands in Phase 3.
+        </p>
+      ) : (
+        <ul class="post-list">
+          {recent.map((entry) => (
+            <li>
+              <a href={linkFor(entry)}>
+                <p class="eyebrow">
+                  {entry.collection === 'travel'
+                    ? entry.data.location?.city
+                    : entry.data.category}
+                  {' · '}
+                  {fmt(entry.data.publishedAt)}
+                </p>
+                <h3>{entry.data.title}</h3>
+                {entry.data.excerpt && <p class="muted">{entry.data.excerpt}</p>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 4rem 1.2rem 3rem;
+    text-align: left;
+  }
+
+  .hero h1 {
+    margin: 0.4rem 0 1rem;
+  }
+
+  .lede {
+    font-size: var(--step-1);
+    color: var(--ink-soft);
+    max-width: 32rem;
+  }
+
+  .recent {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .section-head h2 {
+    margin: 0;
+    font-size: var(--step-2);
+  }
+
+  .more {
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  .more:hover {
+    color: var(--accent);
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1.8rem 2rem;
+  }
+
+  .post-list a {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 0.6rem 0;
+  }
+
+  .post-list h3 {
+    margin: 0.25rem 0 0.4rem;
+    font-size: var(--step-1);
+  }
+
+  .post-list a:hover h3 {
+    color: var(--accent);
+  }
+</style>

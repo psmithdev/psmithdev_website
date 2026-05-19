@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('travel', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const eyebrow = `${entry.data.location.city}, ${entry.data.location.country}`;
+---
+
+<PostLayout entry={entry} eyebrow={eyebrow}>
+  <Content />
+</PostLayout>

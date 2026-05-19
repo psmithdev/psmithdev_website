@@ -1,0 +1,53 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wide footer-row">
+    <p class="muted">&copy; {year} Parker Smith. Made with care.</p>
+    <ul>
+      <li><a href="https://github.com/psmithdev">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/parkersmith1/">LinkedIn</a></li>
+      <li><a href="/rss.xml">RSS</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--rule);
+    padding: 2rem 0 2.5rem;
+    margin-top: 4rem;
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-row p {
+    margin: 0;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+</style>

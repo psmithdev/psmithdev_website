@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const items = (
+  await getCollection(
+    'posts',
+    ({ data }) => !data.draft && data.category === 'making'
+  )
+).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+---
+
+<BaseLayout title="Making">
+  <section class="wide">
+    <header class="head">
+      <p class="eyebrow">Workshop</p>
+      <h1>Making</h1>
+      <p class="muted lede">Things built with hands and patience.</p>
+    </header>
+
+    {
+      items.length === 0 ? (
+        <p class="muted reading">No projects yet.</p>
+      ) : (
+        <ul class="grid">
+          {items.map((entry) => (
+            <li>
+              <a href={`/posts/${entry.slug}/`}>
+                <h2>{entry.data.title}</h2>
+                {entry.data.excerpt && (
+                  <p class="muted">{entry.data.excerpt}</p>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .head {
+    padding: 3rem 0 2rem;
+  }
+  .head h1 {
+    margin: 0.2rem 0 0.4rem;
+  }
+  .lede {
+    font-size: var(--step-1);
+  }
+  .grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 2rem;
+  }
+  .grid a {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .grid h2 {
+    font-size: var(--step-1);
+    margin: 0 0 0.3rem;
+  }
+  .grid a:hover h2 {
+    color: var(--accent);
+  }
+</style>

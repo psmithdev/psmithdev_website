@@ -1,0 +1,74 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+type Entry = CollectionEntry<'posts'> | CollectionEntry<'travel'>;
+
+interface Props {
+  entry: Entry;
+  eyebrow?: string;
+}
+
+const { entry, eyebrow } = Astro.props;
+const { title, publishedAt, cover, coverAlt, excerpt } = entry.data;
+const formatted = publishedAt.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={title} description={excerpt}>
+  <article>
+    <header class="post-header reading">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p class="muted byline">
+        <time datetime={publishedAt.toISOString()}>{formatted}</time>
+      </p>
+    </header>
+
+    {
+      cover && (
+        <figure class="cover wide">
+          <Image src={cover} alt={coverAlt ?? ''} loading="eager" />
+        </figure>
+      )
+    }
+
+    <div class="post-body reading">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  article {
+    padding: 3rem 0 1rem;
+  }
+
+  .post-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .post-header h1 {
+    margin: 0.6rem 0 0.4rem;
+  }
+
+  .byline {
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+  }
+
+  .cover {
+    margin: 0 auto 3rem;
+  }
+
+  .post-body :global(h2),
+  .post-body :global(h3) {
+    margin-top: 2.2em;
+  }
+</style>

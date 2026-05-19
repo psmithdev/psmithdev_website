@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (
+  await getCollection('travel', ({ data }) => !data.draft)
+).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+---
+
+<BaseLayout title="Travel">
+  <section class="wide">
+    <header class="head">
+      <p class="eyebrow">On the road</p>
+      <h1>Travel</h1>
+      <p class="muted lede">
+        Interactive map lands in Phase 4. For now, a chronological list.
+      </p>
+    </header>
+
+    {
+      entries.length === 0 ? (
+        <p class="muted">No travel posts yet.</p>
+      ) : (
+        <ul class="list">
+          {entries.map((entry) => (
+            <li>
+              <a href={`/travel/${entry.slug}/`}>
+                <p class="eyebrow">
+                  {entry.data.location.city}, {entry.data.location.country}
+                </p>
+                <h2>{entry.data.title}</h2>
+                {entry.data.excerpt && (
+                  <p class="muted">{entry.data.excerpt}</p>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .head {
+    padding: 3rem 0 2rem;
+  }
+  .head h1 {
+    margin: 0.2rem 0 0.4rem;
+  }
+  .lede {
+    font-size: var(--step-1);
+  }
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .list li {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .list a {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .list h2 {
+    font-size: var(--step-2);
+    margin: 0.2rem 0 0.4rem;
+  }
+  .list a:hover h2 {
+    color: var(--accent);
+  }
+</style>

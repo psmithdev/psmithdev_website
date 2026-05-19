@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const eyebrowMap = {
+  essay: 'Essay',
+  making: 'Making',
+  tech: 'Tech',
+} as const;
+---
+
+<PostLayout entry={entry} eyebrow={eyebrowMap[entry.data.category]}>
+  <Content />
+</PostLayout>
