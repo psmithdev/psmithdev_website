@@ -1,0 +1,17 @@
+# Hugo → Astro URL migration. Travel posts moved from /posts/ to /travel/.
+/posts/amsterdam-the-netherlands     /travel/amsterdam-the-netherlands/      301
+/posts/berlin-germany                /travel/berlin-germany/                 301
+/posts/brussels-belgium              /travel/brussels-belgium/               301
+/posts/budapest-hungary              /travel/budapest-hungary/               301
+/posts/florence-italy                /travel/florence-italy/                 301
+/posts/la-cinque-terre-hike-italy    /travel/la-cinque-terre-hike-italy/     301
+/posts/london-united-kingdom         /travel/london-united-kingdom/          301
+/posts/paris-france                  /travel/paris-france/                   301
+/posts/prague-czech-republic         /travel/prague-czech-republic/          301
+/posts/rome-italy                    /travel/rome-italy/                     301
+/posts/venice-italy                  /travel/venice-italy/                   301
+/posts/vienna-austria                /travel/vienna-austria/                 301
+/posts/zagarolo-italy                /travel/zagarolo-italy/                 301
+
+# Removed stub post — redirect to home rather than 404.
+/posts/giraffehello                  /                                       301
