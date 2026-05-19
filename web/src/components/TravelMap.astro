@@ -1,0 +1,249 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  height?: string;
+  /** Initial map center [lng, lat]. Defaults to a frame that fits Europe + UK. */
+  center?: [number, number];
+  zoom?: number;
+  interactive?: boolean;
+  class?: string;
+}
+
+const {
+  height = '520px',
+  center = [12, 47],
+  zoom = 3.4,
+  interactive = true,
+  class: className = '',
+} = Astro.props;
+
+const entries = await getCollection('travel', ({ data }) => !data.draft);
+
+const pins = entries.map((e) => ({
+  slug: e.slug,
+  title: e.data.title,
+  city: e.data.location.city,
+  country: e.data.location.country,
+  lat: e.data.location.lat,
+  lng: e.data.location.lng,
+  cover: e.data.cover ?? null,
+  href: `/travel/${e.slug}/`,
+}));
+
+const config = { center, zoom, interactive };
+---
+
+<div class:list={['travel-map-wrap', className]} style={`height:${height}`}>
+  <div class="travel-map" data-map />
+  <script type="application/json" data-map-pins set:html={JSON.stringify(pins)} />
+  <script type="application/json" data-map-config set:html={JSON.stringify(config)} />
+</div>
+
+<script>
+  import maplibregl from 'maplibre-gl';
+  import 'maplibre-gl/dist/maplibre-gl.css';
+
+  function init(wrap: HTMLElement) {
+    const mapEl = wrap.querySelector<HTMLElement>('[data-map]');
+    const pinsEl = wrap.querySelector<HTMLElement>('[data-map-pins]');
+    const cfgEl = wrap.querySelector<HTMLElement>('[data-map-config]');
+    if (!mapEl || !pinsEl || !cfgEl) return;
+
+    const pins = JSON.parse(pinsEl.textContent || '[]') as Array<{
+      slug: string;
+      title: string;
+      city: string;
+      country: string;
+      lat: number;
+      lng: number;
+      cover: string | null;
+      href: string;
+    }>;
+    const cfg = JSON.parse(cfgEl.textContent || '{}') as {
+      center: [number, number];
+      zoom: number;
+      interactive: boolean;
+    };
+
+    const map = new maplibregl.Map({
+      container: mapEl,
+      style: {
+        version: 8,
+        sources: {
+          carto: {
+            type: 'raster',
+            tiles: [
+              'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+              'https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+              'https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+            ],
+            tileSize: 256,
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          },
+        },
+        layers: [{ id: 'carto', type: 'raster', source: 'carto' }],
+      },
+      center: cfg.center,
+      zoom: cfg.zoom,
+      interactive: cfg.interactive,
+      attributionControl: { compact: true },
+    });
+
+    if (cfg.interactive) {
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+    }
+
+    for (const pin of pins) {
+      const el = document.createElement('button');
+      el.className = 'travel-pin';
+      el.type = 'button';
+      el.setAttribute('aria-label', `${pin.city}, ${pin.country}`);
+
+      const popupHtml = `
+        <a class="travel-popup" href="${pin.href}">
+          ${
+            pin.cover
+              ? `<img src="${pin.cover}" alt="" loading="lazy" onerror="this.remove()" />`
+              : ''
+          }
+          <div class="travel-popup-body">
+            <strong>${pin.title}</strong>
+            <span>${pin.city}, ${pin.country}</span>
+          </div>
+        </a>
+      `;
+
+      const popup = new maplibregl.Popup({
+        offset: 14,
+        closeButton: false,
+        maxWidth: '240px',
+      }).setHTML(popupHtml);
+
+      new maplibregl.Marker({ element: el })
+        .setLngLat([pin.lng, pin.lat])
+        .setPopup(popup)
+        .addTo(map);
+
+      // Click pin → navigate to post (popup still hovers).
+      el.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (window.matchMedia('(hover: hover)').matches) {
+          // desktop: let the popup handle it, navigation happens on popup click
+          popup.addTo(map);
+        } else {
+          // touch: tap pin = open post
+          window.location.href = pin.href;
+        }
+      });
+    }
+  }
+
+  // Initialize each map on the page once it scrolls into view.
+  document.querySelectorAll<HTMLElement>('.travel-map-wrap').forEach((wrap) => {
+    if (!('IntersectionObserver' in window)) {
+      init(wrap);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            init(wrap);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    io.observe(wrap);
+  });
+</script>
+
+<style is:global>
+  .travel-map-wrap {
+    position: relative;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: var(--bg-elevated);
+  }
+
+  .travel-map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .travel-pin {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 1px 3px rgba(42, 36, 30, 0.35);
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+
+  .travel-pin:hover {
+    transform: scale(1.35);
+  }
+
+  /* MapLibre popup overrides — warm/journal palette */
+  .maplibregl-popup-content {
+    background: var(--bg);
+    color: var(--ink);
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(42, 36, 30, 0.18);
+    overflow: hidden;
+    font-family: var(--font-serif);
+  }
+
+  .maplibregl-popup-tip {
+    border-top-color: var(--bg) !important;
+    border-bottom-color: var(--bg) !important;
+  }
+
+  .travel-popup {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .travel-popup img {
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background: var(--bg-elevated);
+  }
+
+  .travel-popup-body {
+    padding: 0.5rem 0.7rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .travel-popup strong {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .travel-popup span {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .travel-popup:hover strong {
+    color: var(--accent);
+  }
+</style>

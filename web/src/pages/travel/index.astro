@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TravelMap from '../../components/TravelMap.astro';
 import { getCollection } from 'astro:content';
 
 const entries = (
@@ -13,9 +14,14 @@ const entries = (
       <p class="eyebrow">On the road</p>
       <h1>Travel</h1>
       <p class="muted lede">
-        Interactive map lands in Phase 4. For now, a chronological list.
+        Places I've been, mapped. Click a pin to read the post.
       </p>
     </header>
+
+    <TravelMap height="600px" />
+  </section>
+
+  <section class="wide list-section">
 
     {
       entries.length === 0 ? (
@@ -44,6 +50,13 @@ const entries = (
 <style>
   .head {
     padding: 3rem 0 2rem;
+  }
+  .list-section {
+    padding-top: 2.5rem;
+  }
+  .list-section :global(h2.section-label) {
+    font-size: var(--step-1);
+    margin: 0 0 1rem;
   }
   .head h1 {
     margin: 0.2rem 0 0.4rem;

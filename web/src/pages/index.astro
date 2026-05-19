@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TravelMap from '../components/TravelMap.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
@@ -31,6 +32,14 @@ const linkFor = (entry: (typeof recent)[number]) =>
       I write about places I've been, things I've built, and what I'm learning
       along the way. Welcome — pull up a chair.
     </p>
+  </section>
+
+  <section class="map-teaser wide">
+    <header class="section-head">
+      <h2>Travel</h2>
+      <a href="/travel" class="more">Open full map →</a>
+    </header>
+    <TravelMap height="360px" interactive={false} />
   </section>
 
   <section class="recent wide">
@@ -81,6 +90,10 @@ const linkFor = (entry: (typeof recent)[number]) =>
     font-size: var(--step-1);
     color: var(--ink-soft);
     max-width: 32rem;
+  }
+
+  .map-teaser {
+    padding: 1rem 1.2rem 2rem;
   }
 
   .recent {
