@@ -1,0 +1,19 @@
+// Cloudflare Workers + Static Assets config for the Astro build.
+// `npx wrangler deploy` reads this from the build's working dir (web/).
+// If your Cloudflare project is named something other than "psmithdev",
+// change `name` to match (otherwise wrangler will create/deploy a new worker
+// under this name).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "psmithdev",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2025-09-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
