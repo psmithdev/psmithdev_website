@@ -4,7 +4,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
-  site: 'https://psmithdev.com',
+  site: 'https://psmith.dev',
   output: 'static',
   adapter: cloudflare({ imageService: 'compile' }),
   markdown: {

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 
 type Entry = CollectionEntry<'posts'> | CollectionEntry<'travel'>;
@@ -32,7 +31,7 @@ const formatted = publishedAt.toLocaleDateString('en-US', {
     {
       cover && (
         <figure class="cover wide">
-          <Image src={cover} alt={coverAlt ?? ''} loading="eager" />
+          <img src={cover} alt={coverAlt ?? ''} loading="eager" />
         </figure>
       )
     }
