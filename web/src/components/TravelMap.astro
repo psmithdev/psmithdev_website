@@ -138,18 +138,6 @@ const config = { center, zoom, interactive };
         .setLngLat([pin.lng, pin.lat])
         .setPopup(popup)
         .addTo(map);
-
-      // Click pin → navigate to post (popup still hovers).
-      el.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        if (window.matchMedia('(hover: hover)').matches) {
-          // desktop: let the popup handle it, navigation happens on popup click
-          popup.addTo(map);
-        } else {
-          // touch: tap pin = open post
-          window.location.href = pin.href;
-        }
-      });
     }
   }
 
