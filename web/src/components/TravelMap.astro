@@ -20,16 +20,21 @@ const {
 
 const entries = await getCollection('travel', ({ data }) => !data.draft);
 
-const pins = entries.map((e) => ({
-  slug: e.slug,
-  title: e.data.title,
-  city: e.data.location.city,
-  country: e.data.location.country,
-  lat: e.data.location.lat,
-  lng: e.data.location.lng,
-  cover: e.data.cover ?? null,
-  href: `/travel/${e.slug}/`,
-}));
+const pins = entries.flatMap((e) => {
+  const hasStops = !!e.data.stops?.length;
+  const places = hasStops ? e.data.stops! : [e.data.location];
+  return places.map((p) => ({
+    slug: e.slug,
+    title: e.data.title,
+    sublabel: hasStops ? `${p.city}, ${p.country}` : null,
+    city: p.city,
+    country: p.country,
+    lat: p.lat,
+    lng: p.lng,
+    cover: e.data.cover ?? null,
+    href: `/travel/${e.slug}/`,
+  }));
+});
 
 const config = { center, zoom, interactive };
 ---
@@ -64,6 +69,7 @@ const config = { center, zoom, interactive };
     const pins = JSON.parse(pinsEl.textContent || '[]') as Array<{
       slug: string;
       title: string;
+      sublabel: string | null;
       city: string;
       country: string;
       lat: number;
@@ -123,7 +129,7 @@ const config = { center, zoom, interactive };
           }
           <div class="travel-popup-body">
             <strong>${pin.title}</strong>
-            <span>${pin.city}, ${pin.country}</span>
+            ${pin.sublabel ? `<span>${pin.sublabel}</span>` : ''}
           </div>
         </a>
       `;

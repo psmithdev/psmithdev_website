@@ -12,9 +12,8 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const eyebrow = `${entry.data.location.city}, ${entry.data.location.country}`;
 ---
 
-<PostLayout entry={entry} eyebrow={eyebrow}>
+<PostLayout entry={entry}>
   <Content />
 </PostLayout>

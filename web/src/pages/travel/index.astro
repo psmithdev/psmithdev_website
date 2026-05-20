@@ -31,9 +31,6 @@ const entries = (
           {entries.map((entry) => (
             <li>
               <a href={`/travel/${entry.slug}/`}>
-                <p class="eyebrow">
-                  {entry.data.location.city}, {entry.data.location.country}
-                </p>
                 <h2>{entry.data.title}</h2>
                 {entry.data.excerpt && (
                   <p class="muted">{entry.data.excerpt}</p>

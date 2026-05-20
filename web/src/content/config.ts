@@ -33,6 +33,16 @@ const travel = defineCollection({
       lat: z.number(),
       lng: z.number(),
     }),
+    stops: z
+      .array(
+        z.object({
+          city: z.string(),
+          country: z.string(),
+          lat: z.number(),
+          lng: z.number(),
+        }),
+      )
+      .optional(),
     draft: z.boolean().default(false),
   }),
 });
