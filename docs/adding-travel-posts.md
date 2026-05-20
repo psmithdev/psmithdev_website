@@ -2,7 +2,9 @@
 
 Each travel entry is a single Markdown file in `web/src/content/travel/`. Filename → URL slug. Build is auto-deployed by Cloudflare Workers Builds on push to `main`.
 
-## The fast path (helper script)
+A travel post can be either a **single-city** post (one pin on the map) or a **multi-stop trip** post (one post, multiple pins, all linking back to the same writeup). The helper script supports both modes.
+
+## The fast path (helper script) — single city
 
 ```bash
 # auto-geocode (fastest if the city name is unambiguous)
@@ -19,13 +21,39 @@ node scripts/new-travel.mjs "Tokyo" "Japan" --slug tokyo-2026
 node scripts/new-travel.mjs --visited 2024-09-12 "Porto" "Portugal"
 ```
 
-The script:
-- Writes `web/src/content/travel/<slug>.md` with frontmatter pre-filled
-- Geocodes via OpenStreetMap Nominatim if you skip lat/lng
-- Refuses to overwrite an existing file (pass `--force` to clobber)
-- Slug defaults to `<city>-<country>`; use `--slug` to override
+## The fast path (helper script) — multi-stop trip
 
-## What the file looks like
+Pass `--title` and one `--stop` per city:
+
+```bash
+# auto-geocode each stop
+node scripts/new-travel.mjs \
+  --title "10 Days in China" \
+  --slug china-2026 \
+  --stop "Shenzhen,China" \
+  --stop "Beijing,China" \
+  --stop "Shanghai,China"
+
+# or pass explicit coords per stop (skips geocoding)
+node scripts/new-travel.mjs \
+  --title "Iberian loop" \
+  --slug iberian-loop \
+  --stop "Lisbon,Portugal,38.7223,-9.1393" \
+  --stop "Seville,Spain,37.3886,-5.9823" \
+  --stop "Madrid,Spain,40.4168,-3.7038"
+```
+
+The trip becomes one post at `/travel/<slug>/` and **N pins on the map**, one per stop, all linking back to the post. The first stop is also written as `location:` for the post's primary marker.
+
+## What the script does in both modes
+
+- Writes `web/src/content/travel/<slug>.md` with frontmatter pre-filled
+- Geocodes via OpenStreetMap Nominatim when lat/lng are omitted
+- Refuses to overwrite an existing file (pass `--force` to clobber)
+- Single-city slug defaults to `<city>-<country>`; trip slug defaults to slugified title; use `--slug` to override either
+- Tags include `travel` and a deduplicated entry per country
+
+## What the file looks like — single city
 
 After scaffolding, the file looks like this — fill in `excerpt`, uncomment `cover` once you've uploaded one, and write the body:
 
@@ -50,6 +78,36 @@ Notes from Lisbon. Markdown body goes here.
 
 ![A yellow tram on Rua do Almada](https://assets.psmith.dev/posts/<sha256>.jpeg)
 ```
+
+## What the file looks like — multi-stop trip
+
+A trip post adds a `stops:` array. The schema requires the existing `location:` field too (one primary marker), but the **map renders one pin per entry in `stops:`** rather than the primary. Convention: set `location:` to the first stop.
+
+```markdown
+---
+title: "10 Days in China: Shenzhen, Beijing, and Shanghai"
+publishedAt: 2026-05-19
+visitedAt: 2026-05-19
+location:
+  city: "Shenzhen"
+  country: "China"
+  lat: 22.5431
+  lng: 114.0579
+stops:
+  - { city: "Shenzhen", country: "China", lat: 22.5431, lng: 114.0579 }
+  - { city: "Beijing", country: "China", lat: 39.9042, lng: 116.4074 }
+  - { city: "Shanghai", country: "China", lat: 31.2304, lng: 121.4737 }
+tags:
+  - travel
+  - china
+excerpt: "Two weeks across three cities."
+cover: "https://assets.psmith.dev/posts/<sha256>.jpeg"
+---
+
+Trip notes here.
+```
+
+Each pin's popup will show the trip title and a sublabel for the specific city (e.g. "Beijing, China"). All three pins link to the same post URL.
 
 Schema is enforced by `web/src/content/config.ts` — the build will fail loudly if anything's missing.
 
@@ -90,12 +148,19 @@ Filenames are up to you. Existing migrated images use `<sha256>.<ext>` for dedup
 
 ## Multiple cities in the same country
 
-The country shows up in three places:
-- Filename (default): `florence-italy.md`, `rome-italy.md`, etc. — `<city>-<country>` is the natural slug pattern.
-- `location.country` field: drives the popup text (e.g. "Florence, Italy").
-- `tags`: the script auto-adds `travel` and `<country>` as tags.
+Two patterns:
 
-Nothing about the schema or routing prevents multiple cities per country — every Italian city is its own pin and its own post. The only conflict is if you happen to revisit the same city; then use `--slug` to disambiguate (e.g. `--slug rome-2024`).
+- **Separate posts per city** (existing pattern for Italy: Florence, Rome, Venice, etc.). Each is its own file, its own URL, its own pin. Use this when each city deserves its own writeup.
+- **One trip post, multiple stops** (the `stops:` pattern above). Each stop is its own pin on the map, but they all link back to one writeup. Use this for a single trip across multiple cities that reads as one story.
+
+Both can coexist — adding a multi-stop trip post doesn't conflict with existing single-city posts in the same country. The country shows up in:
+
+- Filename (default): `<city>-<country>` for single, slugified title for trips.
+- `location.country` field on the primary marker.
+- Each stop's `country` field.
+- `tags`: the script auto-adds `travel` and each unique country.
+
+If you happen to revisit the same city, use `--slug` to disambiguate (e.g. `--slug rome-2024`).
 
 ## Removing or renaming a post
 
