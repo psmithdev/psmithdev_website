@@ -2,30 +2,89 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About">
+<BaseLayout title="About" description="A bit about Parker Smith — maker, traveler, and the people who shaped him.">
   <section class="reading">
     <header class="head">
-      <p class="eyebrow">About</p>
-      <h1>Maker of things big and small</h1>
+      <h1>About Me</h1>
     </header>
 
     <p>
-      I'm Parker. This is a quiet corner of the internet where I keep notes
-      about places I've been, things I've built, and ideas I'm working through.
+      My ability to create with my hands and be useful to others is one of the
+      greatest gifts I can imagine. I am just another individual looking,
+      seeking, being, and radiating warmth to the greater good.
     </p>
 
-    <p>
-      Find me on <a href="https://github.com/psmithdev">GitHub</a> or
-      <a href="https://linkedin.com/in/parkersmith1/">LinkedIn</a>.
-    </p>
+    <figure class="quote">
+      <img
+        src="https://assets.psmith.dev/posts/e85bc392c22ba94ea95697ba53005c48de332f07a1288e3140f4c189cb6abe85.avif"
+        alt="We know what we are, but know not what we may be. — William Shakespeare"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+
+    <h2>My Grandmother</h2>
+    <figure>
+      <img
+        src="https://assets.psmith.dev/posts/a060c7d83b0972c3c5691fb909cb50a4012bf7ed23e93c72b556cc00675882cb.jpeg"
+        alt="Parker with his grandmother"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+
+    <h2>My Grandmother and Mother</h2>
+    <figure>
+      <img
+        src="https://assets.psmith.dev/posts/ee9ff83379db2c8416f2e50f9c8b60763a4255dbd86ab03464af56dbffca61e4.jpeg"
+        alt="Parker with his grandmother and mother"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+
+    <h2>My Family</h2>
+    <figure>
+      <img
+        src="https://assets.psmith.dev/posts/597200e6936720e01cef46540c7e684f7e4eb7bf4d547ba5dab1915106b45a45.jpeg"
+        alt="The Smith family"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
   </section>
 </BaseLayout>
 
 <style>
   .head {
     padding: 3rem 0 1rem;
+    text-align: center;
   }
   .head h1 {
     margin: 0.4rem 0 1.5rem;
+  }
+  figure {
+    margin: 1.5rem 0;
+  }
+  figure img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--bg-elevated);
+    border-radius: 4px;
+    display: block;
+  }
+  .quote img {
+    aspect-ratio: auto;
+    object-fit: contain;
+    background: transparent;
+  }
+  .quote {
+    max-width: 500px;
+    margin: 1.5rem auto;
+  }
+  h2 {
+    margin-top: 2.5rem;
   }
 </style>
