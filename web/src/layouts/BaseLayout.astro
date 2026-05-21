@@ -6,15 +6,24 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
 const {
   title = 'Parker Smith',
   description = 'Travel, essays, and things made by hand.',
+  image,
+  type = 'website',
 } = Astro.props;
 
 const fullTitle =
   title === 'Parker Smith' ? title : `${title} — Parker Smith`;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = image
+  ? new URL(image, Astro.site).toString()
+  : new URL('/og-default.png', Astro.site).toString();
 ---
 
 <!doctype html>
@@ -23,6 +32,7 @@ const fullTitle =
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       rel="alternate"
@@ -30,6 +40,21 @@ const fullTitle =
       title="Parker Smith"
       href="/rss.xml"
     />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Parker Smith" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <title>{fullTitle}</title>
   </head>
   <body>
