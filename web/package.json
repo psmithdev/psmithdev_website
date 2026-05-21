@@ -12,13 +12,11 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.5.0",
     "@astrojs/rss": "^4.0.11",
     "astro": "^5.8.0",
     "maplibre-gl": "^5.24.0",
     "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0",
-    "sharp": "^0.34.0"
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
