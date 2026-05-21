@@ -31,7 +31,13 @@ const formatted = publishedAt.toLocaleDateString('en-US', {
     {
       cover && (
         <figure class="cover wide">
-          <img src={cover} alt={coverAlt ?? ''} loading="eager" />
+          <img
+            src={cover}
+            alt={coverAlt ?? ''}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
         </figure>
       )
     }
@@ -64,6 +70,15 @@ const formatted = publishedAt.toLocaleDateString('en-US', {
 
   .cover {
     margin: 0 auto 3rem;
+  }
+  .cover img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    background: var(--bg-elevated);
+    border-radius: 4px;
   }
 
   .post-body :global(h2),
