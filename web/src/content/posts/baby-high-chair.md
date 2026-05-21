@@ -10,8 +10,6 @@ category: making
 ---
 
 My Grandpa and Grandma's children, Aunt Linda and Mom Paula, were the first to sit in the high chair
-![IMG_0643.jpg](https://assets.psmith.dev/posts/786e09c58f9fc62d560f26491da177ed17cf61897f1130e6d91881ea51636fb9.jpeg)
-
 Next added were their grandchildren and great grandchildren
 ![baby chair names.png](https://assets.psmith.dev/posts/1ed398b2dd99fe83f64e7db6e0d353d74872d7ed189f4a79d3564f759966d68c.png)
 

@@ -7,10 +7,8 @@ category: making
 
 Box is 23x22 inches and holds 25 flowers in a 5x5 grid.  Finger joints hold it all together.
 
-
 ![box2.png](https://assets.psmith.dev/posts/72c54fe977b1598a2127051593014d0b6b1417e5ee4b71fb8f9ff01c18f6242a.png)
 
 ![PXL_20211218_233133724.PORTRAIT.jpg](https://assets.psmith.dev/posts/5e9fcabfca52401a7284d5e9dbb1a5ae751be439c47178970ca900bae2063f53.jpeg)
-
 
 ![flower design sketches.jpg](https://assets.psmith.dev/posts/a5eb063952b2146a9034c9c04ee78a5f703b07f764876b2f32a42aa78f9d104c.jpeg)

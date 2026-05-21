@@ -9,8 +9,6 @@ cover: "https://assets.psmith.dev/posts/cbfe937931bf733e5b8a8d53c310d6bfa502b8c8
 category: making
 ---
 
-![XCBDLC2VJNFHNE7HKCY4INIAJM.JPG](https://assets.psmith.dev/posts/cbfe937931bf733e5b8a8d53c310d6bfa502b8c8c1b4abd2ff7388ee102651c2.jpeg)
-
 ![WVP6VAOY4JCM3H6VF454NFTLIA.jpg](https://assets.psmith.dev/posts/9e22ac37e92a8088a97c5f822e3c29e71898842fe7c737b5335290ccd0b2cb67.jpeg)
 
 ![TYZ2TCQWJJGZRLIWQHFB75O5GY.JPG](https://assets.psmith.dev/posts/58a3afa2acb9a1b2da9f1f35412c95745198ac7bd0acfc67907dc7b9915cd52c.jpeg)

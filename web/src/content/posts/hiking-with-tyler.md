@@ -7,7 +7,6 @@ category: essay
 
 <iframe width="100%" height="600" frameborder="0" title="Felt Map" src="https://felt.com/embed/map/Untitled-Map-MAQsM9C1iSbqK4DASUDh3cC?lat=42.092422&lon=-71.316721&zoom=7.37"></iframe>
 
-
 [List of hikes in each state](https://www.msn.com/en-us/travel/tripideas/take-a-hike-this-is-your-state-s-best-trail/ss-AAU223L?fullscreen=true&cvid=bc0c5e1072be4855a2b9fe3f5a25e29d#image=2)
 
 1. Bear Mountain Trail, Mount Riga State Park. CT

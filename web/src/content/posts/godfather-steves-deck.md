@@ -11,9 +11,6 @@ category: making
 
 ![PXL_20210606_170035182.jpg](https://assets.psmith.dev/posts/b5fc33788ea43f6f925ef5c30decefa0e1f9e22dc6f2aad597c1f5566863ebe8.jpeg)
 
-![PXL_20210608_171808682.jpg](https://assets.psmith.dev/posts/e5baa4aa5610a3f05b2d14292aa1a0c94aabe39550d4ca1534322c7602cb9c55.jpeg)
-hnode.com/res/hashnode/image/upload/v1641050638743/99ojZ_4nr.jpeg)
-
 ![PXL_20210620_205506225.jpg](https://assets.psmith.dev/posts/191511655baaabd3e841abd414a1663d79052f05a886173bd53fdbdd8bb43133.jpeg)
 
 ![PXL_20210722_202724361.jpg](https://assets.psmith.dev/posts/97a6fb0f5d2fd6652955811e68c785d85a50c34fc90ef1133139c081b479c869.jpeg)

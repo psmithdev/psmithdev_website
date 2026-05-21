@@ -13,8 +13,6 @@ location:
   lng: 12.8336
 ---
 
-![IMG_4984-PANO.jpg](https://assets.psmith.dev/posts/9a8d83cc4b1f3bd1fc17c96eaa53ce93e17c44518fc716a69be9ab30d6c57560.jpeg)
-
 ![IMG_4978.JPG](https://assets.psmith.dev/posts/2c4b595327f3eb1145c71775c1eaac5124f93167e3efaede5add5e536b2842fe.jpeg)
 
 ![IMG_4914.JPG](https://assets.psmith.dev/posts/673ce66347f9ff020ac77077537dcc5205b9a045c3b5c7c491a4939162bab7de.jpeg)

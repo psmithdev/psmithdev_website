@@ -11,8 +11,6 @@ category: making
 
 Before
 
-![IMG_8617.jpg](https://assets.psmith.dev/posts/0595b0920aaec2e8350af1030ea8594db4f0f908a0958a160a8018e3b0a570fe.jpeg)
-
 ![IMG_8639.jpg](https://assets.psmith.dev/posts/24d16500f6de0665cc904809e23d8901c8e9f968bac56d8697690be97d91a276.jpeg)
 
 Clearing Brush
