@@ -16,7 +16,7 @@ excerpt: "Ten days, four stops, and a country that feels like the future without
 cover: "https://assets.psmith.dev/posts/Chongqing-images.jpg"
 coverAlt: "Night skyline in Chongqing"
 presentation: cinematic
-heroImage: "/preview-images/01-shenzhen-skyline.jpg"
+heroImage: "https://assets.psmith.dev/posts/b097376a078197e4feedcd1cc6eeaacd2a740fd4ec33a4372c4d2c25bdaecf9d.jpg"
 heroAlt: "Shenzhen Futian skyline at dusk"
 kicker: "Ten days across China"
 ---
@@ -40,8 +40,8 @@ I'm used to American infrastructure and the small daily frictions you stop notic
 </section>
 
 <figure class="image-pair" aria-label="High-speed rail and mobile payment scenes">
-  <img src="/preview-images/02-hsr-train.jpg" alt="High-speed CR400AF train at the platform" loading="lazy" decoding="async">
-  <img src="/preview-images/03-wechat-pay.jpg" alt="WeChat Pay and Alipay QR code signs at a counter" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/437656f184801a70bd999fe836155c3a14204a035be3d7bd7f18682dc5eb793b.jpg" alt="High-speed CR400AF train at the platform" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/da26ab9b9296a7696aea3e92ba7f06b35b77bd02414297786928684a323b65a3.jpg" alt="WeChat Pay and Alipay QR code signs at a counter" loading="lazy" decoding="async">
 </figure>
 
 <section class="cinematic-section">
@@ -55,7 +55,7 @@ Our welcome dinner that first night in Nanshan was the first time I noticed it: 
 </section>
 
 <figure class="media-wide">
-  <img src="/preview-images/welcome-dinner.jpg" alt="Welcome dinner in Shenzhen" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/28021f5486c8b4139cae2e39361c5b59b9ed22c7bd61388042f642e56b7b219e.jpg" alt="Welcome dinner in Shenzhen" loading="lazy" decoding="async">
 </figure>
 
 <section class="sticky-scene">
@@ -71,14 +71,14 @@ Nobody in Shenzhen points at the robot. The robot is just doing its job. The fut
 
   </div>
   <div class="sticky-stack">
-    <img src="/preview-images/04-huaqiangbei.jpg" alt="Huaqiangbei electronics market intersection in Shenzhen" loading="lazy" decoding="async">
-    <img src="/preview-images/05-byd-ev.jpg" alt="BYD electric vehicle on a Shenzhen street" loading="lazy" decoding="async">
-    <img src="/preview-images/06-delivery-robot-2.jpg" alt="Autonomous sidewalk delivery robot" loading="lazy" decoding="async">
+    <img src="https://assets.psmith.dev/posts/590fe4e475592fe72c98b9053b3f023ff23fbc09cde41d4b051ceb5ff4bdc5b5.jpg" alt="Huaqiangbei electronics market intersection in Shenzhen" loading="lazy" decoding="async">
+    <img src="https://assets.psmith.dev/posts/21f7c627d06d3355053b55d385f45fd685b508a9314b599bb57fcc247f796306.jpg" alt="BYD electric vehicle on a Shenzhen street" loading="lazy" decoding="async">
+    <img src="https://assets.psmith.dev/posts/6eddb4ceb54e37a1a8c41192739abef994c5bc680509fd3b3f87ff28915b39f1.jpg" alt="Autonomous sidewalk delivery robot" loading="lazy" decoding="async">
   </div>
 </section>
 
 <figure class="media-wide">
-  <img src="/preview-images/07-chinese-food.jpg" alt="Cantonese food spread in Shenzhen" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/6e8689bc3c7f54d958fa0ab86790eb5c2eea0a9a5dc176bb2a468d7a9a65ef5b.jpg" alt="Cantonese food spread in Shenzhen" loading="lazy" decoding="async">
 </figure>
 
 <section class="cinematic-section tone-shift">
@@ -92,12 +92,12 @@ The karst mountains around the Li River don't look real. They look like a Chines
 </section>
 
 <figure class="media-full">
-  <img src="/preview-images/12-li-river.jpg" alt="Karst peaks rising along the Li River" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/40f903d77206796fe64908db372d8602297d132d48225fcf3f5238c0d1832ee3.jpg" alt="Karst peaks rising along the Li River" loading="lazy" decoding="async">
 </figure>
 
 <figure class="image-pair" aria-label="Yangshuo countryside and cafe scenes">
-  <img src="/preview-images/13-yangshuo.jpg" alt="Yangshuo countryside karst landscape" loading="lazy" decoding="async">
-  <img src="/preview-images/14-yangshuo-cafe.jpg" alt="Cafe overlooking the Yangshuo countryside" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/6a4ca50568b5bd4dc995b23b5be336afb3098906a080e05f12915ec020bee417.jpg" alt="Yangshuo countryside karst landscape" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/57fb1c2992abe7e54712a4b003f26c71b73e5e0dc326cad413962dce8d252405.jpg" alt="Cafe overlooking the Yangshuo countryside" loading="lazy" decoding="async">
 </figure>
 
 <section class="cinematic-section">
@@ -117,9 +117,9 @@ Shenzhen has a population larger than New York City's and didn't exist as a city
 </section>
 
 <figure class="image-triptych" aria-label="Chongqing scale scenes">
-  <img src="/preview-images/08-hongya-cave.jpg" alt="Hongya Cave illuminated at night from Qiansimen Bridge" loading="lazy" decoding="async">
-  <img src="/preview-images/09-liziba.png" alt="Liziba light rail passing through a residential building" loading="lazy" decoding="async">
-  <img src="/preview-images/10-yangtze-cableway.jpg" alt="Yangtze River cableway over downtown Chongqing" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/4805be251e997290db92e4c411cb03c618e7de5e57d35f1793c6483b9f652814.jpg" alt="Hongya Cave illuminated at night from Qiansimen Bridge" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/f1643718371586552e1916b311370939ebbfaa543ce6fffbb848218ca2106a2c.png" alt="Liziba light rail passing through a residential building" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/3d5c06041a018b7bb1034dc542bab591c59603cd9f69b45689d4c2308728f140.jpg" alt="Yangtze River cableway over downtown Chongqing" loading="lazy" decoding="async">
 </figure>
 
 <section class="cinematic-section">
@@ -131,7 +131,7 @@ Our closing hotpot dinner was in Chongqing, which is where hotpot is supposed to
 </section>
 
 <figure class="media-wide">
-  <img src="/preview-images/11-hotpot-2.jpg" alt="Chongqing hotpot at the table" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/8aee466a6f2a49570d77189add6e82ec406d0fc942ae7c3d4071ef69397163c3.jpg" alt="Chongqing hotpot at the table" loading="lazy" decoding="async">
 </figure>
 
 <section class="cinematic-ending">
@@ -145,5 +145,5 @@ I went in expecting to be impressed by the technology and came out thinking more
 </section>
 
 <figure class="media-full">
-  <img src="/preview-images/15-closing-shot.jpg" alt="Closing view from the China trip" loading="lazy" decoding="async">
+  <img src="https://assets.psmith.dev/posts/63bcd019dc0846697c5d1ccb8991e14d141d0d2bcb0879dee477f4c68330486d.jpg" alt="Closing view from the China trip" loading="lazy" decoding="async">
 </figure>
