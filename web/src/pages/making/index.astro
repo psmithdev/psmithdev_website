@@ -10,7 +10,7 @@ const items = (
 ).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 ---
 
-<BaseLayout title="Making">
+<BaseLayout title="Making" description="Woodworking and maker projects — things built with hands and patience.">
   <section class="wide">
     <header class="head">
       <p class="eyebrow">Workshop</p>
@@ -25,11 +25,27 @@ const items = (
         <ul class="grid">
           {items.map((entry) => (
             <li>
-              <a href={`/posts/${entry.slug}/`}>
-                <h2>{entry.data.title}</h2>
-                {entry.data.excerpt && (
-                  <p class="muted">{entry.data.excerpt}</p>
-                )}
+              <a href={`/posts/${entry.slug}/`} class="card">
+                <div class="thumb">
+                  {entry.data.cover ? (
+                    <img
+                      src={entry.data.cover}
+                      alt={entry.data.coverAlt ?? ''}
+                      loading="lazy"
+                      decoding="async"
+                      width="160"
+                      height="160"
+                    />
+                  ) : (
+                    <div class="thumb-placeholder" aria-hidden="true" />
+                  )}
+                </div>
+                <div class="text">
+                  <h2>{entry.data.title}</h2>
+                  {entry.data.excerpt && (
+                    <p class="muted excerpt">{entry.data.excerpt}</p>
+                  )}
+                </div>
               </a>
             </li>
           ))}
@@ -58,15 +74,49 @@ const items = (
     gap: 2rem;
   }
   .grid a {
-    display: block;
     color: var(--ink);
     text-decoration: none;
   }
+  .card {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  .thumb {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--bg-elevated);
+    transition: box-shadow 0.2s ease;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-elevated);
+  }
   .grid h2 {
-    font-size: var(--step-1);
+    font-size: var(--step-0);
+    line-height: 1.25;
     margin: 0 0 0.3rem;
+  }
+  .excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .grid a:hover h2 {
     color: var(--accent);
+  }
+  .grid a:hover .thumb {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 </style>
