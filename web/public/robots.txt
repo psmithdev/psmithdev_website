@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psmith.dev/sitemap-index.xml
