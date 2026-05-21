@@ -1,0 +1,11 @@
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: interest-cohort=(), browsing-topics=(), geolocation=(), microphone=(), camera=()
+  X-Frame-Options: SAMEORIGIN
+  Cross-Origin-Opener-Policy: same-origin
+
+# Long-cache hashed Astro build assets
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
