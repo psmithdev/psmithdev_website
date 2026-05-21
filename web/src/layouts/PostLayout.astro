@@ -12,6 +12,12 @@ interface Props {
 
 const { entry, eyebrow } = Astro.props;
 const { title, publishedAt, cover, coverAlt, excerpt } = entry.data;
+const presentation =
+  'presentation' in entry.data ? entry.data.presentation : 'standard';
+const isCinematic = presentation === 'cinematic';
+const heroImage = 'heroImage' in entry.data ? entry.data.heroImage : undefined;
+const heroAlt = 'heroAlt' in entry.data ? entry.data.heroAlt : undefined;
+const kicker = 'kicker' in entry.data ? entry.data.kicker : undefined;
 const formatted = publishedAt.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -35,30 +41,55 @@ const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
   image={cover}
   type="article"
 >
-  <article>
-    <header class="post-header reading">
-      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-      <h1>{title}</h1>
-      <p class="muted byline">
-        <time datetime={publishedAt.toISOString()}>{formatted}</time>
-      </p>
-    </header>
-
+  <article class:list={[isCinematic && 'cinematic']}>
     {
-      cover && (
-        <figure class="cover wide">
-          <img
-            src={cover}
-            alt={coverAlt ?? ''}
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </figure>
+      isCinematic ? (
+        <header class="cinematic-hero">
+          {heroImage && (
+            <img
+              src={heroImage}
+              alt={heroAlt ?? coverAlt ?? ''}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          )}
+          <div class="cinematic-hero-copy">
+            {(eyebrow || kicker) && <p class="eyebrow">{kicker ?? eyebrow}</p>}
+            <h1>{title}</h1>
+            {excerpt && <p class="dek">{excerpt}</p>}
+            <p class="byline">
+              <time datetime={publishedAt.toISOString()}>{formatted}</time>
+            </p>
+          </div>
+          <p class="scroll-cue">Scroll</p>
+        </header>
+      ) : (
+        <>
+          <header class="post-header reading">
+            {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+            <h1>{title}</h1>
+            <p class="muted byline">
+              <time datetime={publishedAt.toISOString()}>{formatted}</time>
+            </p>
+          </header>
+
+          {cover && (
+            <figure class="cover wide">
+              <img
+                src={cover}
+                alt={coverAlt ?? ''}
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </figure>
+          )}
+        </>
       )
     }
 
-    <div class="post-body reading">
+    <div class:list={['post-body', isCinematic ? 'cinematic-body' : 'reading']}>
       <slot />
     </div>
 
@@ -84,6 +115,13 @@ const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
 <style>
   article {
     padding: 3rem 0 1rem;
+  }
+
+  article.cinematic {
+    padding-top: 0;
+    background:
+      linear-gradient(180deg, rgba(250, 246, 240, 0) 0, var(--bg) 46rem),
+      var(--bg);
   }
 
   .post-header {
@@ -147,5 +185,321 @@ const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
   }
   .post-nav a:hover .title {
     color: var(--accent);
+  }
+
+  .cinematic-hero {
+    position: relative;
+    min-height: calc(100vh - 91px);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #171411;
+    color: #fff8ed;
+  }
+
+  .cinematic-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(10, 8, 6, 0.72), rgba(10, 8, 6, 0.18)),
+      linear-gradient(0deg, rgba(10, 8, 6, 0.72), rgba(10, 8, 6, 0) 40%);
+  }
+
+  .cinematic-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cinematic-hero-copy {
+    position: relative;
+    z-index: 1;
+    width: min(64rem, 100%);
+    padding: 7rem 1.5rem;
+  }
+
+  .cinematic-hero .eyebrow,
+  .cinematic-hero h1,
+  .cinematic-hero .dek,
+  .cinematic-hero .byline {
+    max-width: 52rem;
+    color: inherit;
+  }
+
+  .cinematic-hero h1 {
+    margin: 0.7rem 0 1rem;
+    font-size: clamp(2.9rem, 7vw, 5.6rem);
+    line-height: 1.05;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .cinematic-hero .dek {
+    font-size: var(--step-1);
+    line-height: 1.55;
+  }
+
+  .cinematic-hero .byline,
+  .scroll-cue {
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translateX(-50%);
+    margin: 0;
+    color: rgba(255, 248, 237, 0.78);
+  }
+
+  .cinematic-body {
+    --cinematic-dark: #161411;
+    --cinematic-paper: #fffaf1;
+    --cinematic-jade: #2f6f65;
+    counter-reset: chapter;
+    overflow: clip;
+  }
+
+  .cinematic-body :global(.cinematic-intro),
+  .cinematic-body :global(.cinematic-section),
+  .cinematic-body :global(.cinematic-ending) {
+    width: min(44rem, 100%);
+    margin: 0 auto;
+    padding: 8rem 1.2rem;
+  }
+
+  .cinematic-body :global(.cinematic-intro) {
+    font-size: var(--step-1);
+    line-height: 1.75;
+  }
+
+  .cinematic-body :global(.cinematic-section),
+  .cinematic-body :global(.sticky-scene) {
+    counter-increment: chapter;
+  }
+
+  .cinematic-body :global(.cinematic-section h2),
+  .cinematic-body :global(.sticky-scene h2) {
+    margin-top: 0;
+    text-wrap: balance;
+  }
+
+  .cinematic-body :global(.cinematic-section h2::before),
+  .cinematic-body :global(.sticky-scene h2::before) {
+    content: counter(chapter, decimal-leading-zero);
+    display: block;
+    margin-bottom: 1rem;
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  .cinematic-body :global(.cinematic-section p),
+  .cinematic-body :global(.cinematic-ending p) {
+    font-size: var(--step-1);
+    line-height: 1.75;
+  }
+
+  .cinematic-body :global(.pull) {
+    margin: 3rem 0;
+    padding: 0;
+    border: 0;
+    color: var(--ink);
+    font-size: var(--step-2);
+    line-height: 1.35;
+    font-style: normal;
+  }
+
+  .cinematic-body :global(.media-wide),
+  .cinematic-body :global(.media-full),
+  .cinematic-body :global(.image-pair),
+  .cinematic-body :global(.image-triptych),
+  .cinematic-body :global(.sticky-scene) {
+    width: min(72rem, 100%);
+    margin: 1rem auto 0;
+    padding: 0 1.2rem;
+  }
+
+  .cinematic-body :global(.media-full) {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .cinematic-body :global(.media-wide img),
+  .cinematic-body :global(.media-full img),
+  .cinematic-body :global(.image-pair img),
+  .cinematic-body :global(.image-triptych img),
+  .cinematic-body :global(.sticky-scene img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background: var(--bg-elevated);
+    border-radius: 4px;
+  }
+
+  .cinematic-body :global(.media-full img) {
+    min-height: 72vh;
+    max-height: 92vh;
+  }
+
+  .cinematic-body :global(.image-pair),
+  .cinematic-body :global(.image-triptych) {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .cinematic-body :global(.image-pair) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: end;
+  }
+
+  .cinematic-body :global(.image-triptych) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cinematic-body :global(.image-pair img),
+  .cinematic-body :global(.image-triptych img) {
+    height: clamp(18rem, 44vw, 34rem);
+  }
+
+  .cinematic-body :global(.image-triptych img:nth-child(2)) {
+    margin-top: 3rem;
+  }
+
+  .cinematic-body :global(.tone-shift) {
+    width: 100%;
+    max-width: none;
+    margin: 3rem 0 0;
+    padding: 8rem 1.2rem;
+    background: var(--cinematic-dark);
+    color: var(--cinematic-paper);
+  }
+
+  .cinematic-body :global(.tone-shift > *) {
+    width: min(44rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cinematic-body :global(.tone-shift h2),
+  .cinematic-body :global(.tone-shift p),
+  .cinematic-body :global(.tone-shift .pull) {
+    color: inherit;
+  }
+
+  .cinematic-body :global(.tone-shift h2::before) {
+    color: #8cc9bd;
+  }
+
+  .cinematic-body :global(.sticky-scene) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+    gap: 3rem;
+    align-items: start;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .cinematic-body :global(.sticky-scene .sticky-copy) {
+    position: sticky;
+    top: 8rem;
+  }
+
+  .cinematic-body :global(.sticky-scene .sticky-copy h2) {
+    margin-top: 0;
+  }
+
+  .cinematic-body :global(.sticky-stack) {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .cinematic-body :global(.sticky-stack img) {
+    min-height: 22rem;
+    max-height: 32rem;
+  }
+
+  .cinematic-body :global(.cinematic-ending) {
+    text-align: center;
+  }
+
+  .cinematic-body :global(.cinematic-ending h2) {
+    margin-top: 0;
+  }
+
+  .cinematic-body :global(.cinematic-ending p) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 36rem;
+  }
+
+  article.cinematic .post-nav {
+    margin-top: 0;
+  }
+
+  @media (max-width: 760px) {
+    .cinematic-hero {
+      min-height: calc(100svh - 78px);
+    }
+
+    .cinematic-hero::after {
+      background:
+        linear-gradient(0deg, rgba(10, 8, 6, 0.76), rgba(10, 8, 6, 0.12)),
+        linear-gradient(90deg, rgba(10, 8, 6, 0.56), rgba(10, 8, 6, 0.18));
+    }
+
+    .cinematic-hero-copy {
+      padding: 5rem 1.2rem;
+    }
+
+    .scroll-cue {
+      display: none;
+    }
+
+    .cinematic-body :global(.cinematic-intro),
+    .cinematic-body :global(.cinematic-section),
+    .cinematic-body :global(.cinematic-ending),
+    .cinematic-body :global(.tone-shift) {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .cinematic-body :global(.image-pair),
+    .cinematic-body :global(.image-triptych),
+    .cinematic-body :global(.sticky-scene) {
+      grid-template-columns: 1fr;
+    }
+
+    .cinematic-body :global(.image-triptych img:nth-child(2)) {
+      margin-top: 0;
+    }
+
+    .cinematic-body :global(.sticky-scene) {
+      gap: 1.5rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .cinematic-body :global(.sticky-scene .sticky-copy) {
+      position: static;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cinematic-body :global(.sticky-scene .sticky-copy) {
+      position: static;
+    }
   }
 </style>

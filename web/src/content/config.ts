@@ -27,6 +27,10 @@ const travel = defineCollection({
     cover: z.string().url().optional(),
     coverAlt: z.string().optional(),
     excerpt: z.string().optional(),
+    presentation: z.enum(['standard', 'cinematic']).default('standard'),
+    heroImage: z.string().optional(),
+    heroAlt: z.string().optional(),
+    kicker: z.string().optional(),
     location: z.object({
       city: z.string(),
       country: z.string(),

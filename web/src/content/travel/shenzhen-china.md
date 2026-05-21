@@ -14,15 +14,22 @@ stops:
   - { city: Chongqing, country: China, lat: 29.5708, lng: 106.5431 }
 excerpt: "Ten days, four stops, and a country that feels like the future without trying to."
 cover: "https://assets.psmith.dev/posts/Chongqing-images.jpg"
+coverAlt: "Night skyline in Chongqing"
+presentation: cinematic
+heroImage: "/preview-images/01-shenzhen-skyline.jpg"
+heroAlt: "Shenzhen Futian skyline at dusk"
+kicker: "Ten days across China"
 ---
+
+<section class="cinematic-intro">
 
 Ten days. Four cities. Shenzhen, Guilin, Yangshuo, Chongqing. I went with a small group from Network School, nine of us, mostly left to our own pace. I didn't go in with strong expectations, which turned out to be the right move, because almost everything I thought I knew about China was off by a decade.
 
 The clearest way I can put it: China feels like the future, but also like itself. Those two things don't pull against each other the way I expected them to.
 
-<!-- IMAGE: hero / arrival shot , Shenzhen skyline or first impression -->
+</section>
 
-![Shenzhen Futian skyline at dusk](/preview-images/01-shenzhen-skyline.jpg)
+<section class="cinematic-section">
 
 ## Everything just works
 
@@ -30,17 +37,29 @@ Everything is _frictionless_. You scan a QR code to pay for noodles. You scan on
 
 I'm used to American infrastructure and the small daily frictions you stop noticing until they're gone. China just doesn't have those frictions. Or rather, it traded them away years ago for a different set, and the trade looks really good from the inside of a clean train moving 300 km/h.
 
-<!-- IMAGE: train station / HSR platform -->
+</section>
 
-![High-speed CR400AF train at the platform](/preview-images/02-hsr-train.jpg)
+<figure class="image-pair" aria-label="High-speed rail and mobile payment scenes">
+  <img src="/preview-images/02-hsr-train.jpg" alt="High-speed CR400AF train at the platform" loading="lazy" decoding="async">
+  <img src="/preview-images/03-wechat-pay.jpg" alt="WeChat Pay and Alipay QR code signs at a counter" loading="lazy" decoding="async">
+</figure>
 
-<!-- IMAGE: phone at a payment terminal / QR code wall -->
+<section class="cinematic-section">
 
-![WeChat Pay and Alipay QR code signs at a counter](/preview-images/03-wechat-pay.jpg)
+<blockquote class="pull">The surprise was not the tech. It was the calm.</blockquote>
 
-What surprised me wasn't the tech itself but how _calm_ it all felt. A Shenzhen subway station at rush hour is denser than anything I've seen in New York, and somehow quieter. People queue. People wait. The system absorbs the load. Our welcome dinner that first night in Nanshan was the first time I noticed it: a packed restaurant, no shouting, food arriving fast, the whole place felt like a great "welcome to china!" feel.
+What surprised me wasn't the tech itself but how _calm_ it all felt. A Shenzhen subway station at rush hour is denser than anything I've seen in New York, and somehow quieter. People queue. People wait. The system absorbs the load.
 
-![welcome dinner](/preview-images/welcome-dinner.jpg)
+Our welcome dinner that first night in Nanshan was the first time I noticed it: a packed restaurant, food arriving fast, the table full, and no sense that the city was straining under itself.
+
+</section>
+
+<figure class="media-wide">
+  <img src="/preview-images/welcome-dinner.jpg" alt="Welcome dinner in Shenzhen" loading="lazy" decoding="async">
+</figure>
+
+<section class="sticky-scene">
+  <div class="sticky-copy">
 
 ## Robots, drones, electric everything
 
@@ -48,25 +67,21 @@ Then there's the visible-future stuff. The stuff that makes you laugh the first 
 
 EVs are the default. Not a third of the cars or half. Almost all of them, especially in Shenzhen. The streets are quiet in a way that took me a day to figure out: no engine noise. Delivery robots roll past you on the sidewalk and nobody looks up. Drones overhead. Huaqiangbei is six city blocks of electronics components stacked floor-to-ceiling, with grandmothers running stalls that supply half the world's prototypes.
 
-<!-- IMAGE: Huaqiangbei electronics market -->
-
-![Huaqiangbei electronics market intersection in Shenzhen](/preview-images/04-huaqiangbei.jpg)
-
-<!-- IMAGE: EVs on a Shenzhen street / charging stations -->
-
-![BYD electric vehicle](/preview-images/05-byd-ev.jpg)
-
-<!-- IMAGE: delivery robot or drone -->
-
-![Autonomous sidewalk delivery robot](/preview-images/06-delivery-robot-2.jpg)
-
 Nobody in Shenzhen points at the robot. The robot is just doing its job. The future, when it actually arrives, isn't marketed at you. It's boring, and people are eating dumplings while it happens.
 
-We ate well in Shenzhen. Just your typical chinese food usually drenched in oil!
+  </div>
+  <div class="sticky-stack">
+    <img src="/preview-images/04-huaqiangbei.jpg" alt="Huaqiangbei electronics market intersection in Shenzhen" loading="lazy" decoding="async">
+    <img src="/preview-images/05-byd-ev.jpg" alt="BYD electric vehicle on a Shenzhen street" loading="lazy" decoding="async">
+    <img src="/preview-images/06-delivery-robot-2.jpg" alt="Autonomous sidewalk delivery robot" loading="lazy" decoding="async">
+  </div>
+</section>
 
-<!-- IMAGE: Shenzhen food moment -->
+<figure class="media-wide">
+  <img src="/preview-images/07-chinese-food.jpg" alt="Cantonese food spread in Shenzhen" loading="lazy" decoding="async">
+</figure>
 
-![Cantonese dim sum spread](/preview-images/07-chinese-food.jpg)
+<section class="cinematic-section tone-shift">
 
 ## The reset in Yangshuo & Guilin
 
@@ -74,19 +89,22 @@ In the middle of all that, two days in Yangshuo.
 
 The karst mountains around the Li River don't look real. They look like a Chinese landscape painting decided to insist on itself. We took a slow boat down the river, rented electric scooters for 30 yuan day rate, drank duck shit tea at a cafe overlooking a rice field, and didn't do much else.
 
-<!-- IMAGE: karst mountains / Li River cruise -->
+</section>
 
-![Karst peaks rising along the Li River](/preview-images/12-li-river.jpg)
+<figure class="media-full">
+  <img src="/preview-images/12-li-river.jpg" alt="Karst peaks rising along the Li River" loading="lazy" decoding="async">
+</figure>
 
-<!-- IMAGE: cycling or bamboo rafting in Yangshuo -->
+<figure class="image-pair" aria-label="Yangshuo countryside and cafe scenes">
+  <img src="/preview-images/13-yangshuo.jpg" alt="Yangshuo countryside karst landscape" loading="lazy" decoding="async">
+  <img src="/preview-images/14-yangshuo-cafe.jpg" alt="Cafe overlooking the Yangshuo countryside" loading="lazy" decoding="async">
+</figure>
 
-![Yangshuo countryside karst landscape](/preview-images/13-yangshuo.jpg)
-
-<!-- IMAGE: Yangshuo cafe / quiet moment (no preview , your photo goes here) -->
-
-![Yangshuo cafe](/preview-images/14-yangshuo-cafe.jpg)
-
+<section class="cinematic-section">
 What Yangshuo reminded me is that the megacity China is one China, not the only one. The pace in the village is older than anything in Shenzhen by a couple thousand years, and it isn't going anywhere. People grow rice. People sit. The light moves across the karsts in the late afternoon and it's beautiful.
+</section>
+
+<section class="cinematic-section">
 
 ## The scale
 
@@ -94,25 +112,27 @@ The cities are bigger than the numbers prepare you for.
 
 Shenzhen has a population larger than New York City's and didn't exist as a city forty years ago. Chongqing has 32 million people stacked into a vertical labyrinth where the eighth floor of one building is street level for another. You take an elevator to ground floor and it opens onto a highway. The Liziba light rail runs _through_ an apartment building. Hongya Cave at night looks like a Miyazaki frame somebody built in concrete.
 
-<!-- IMAGE: Chongqing skyline at night / Hongya Cave -->
+</section>
 
-![Hongya Cave illuminated at night from Qiansimen Bridge](/preview-images/08-hongya-cave.jpg)
+<figure class="image-triptych" aria-label="Chongqing scale scenes">
+  <img src="/preview-images/08-hongya-cave.jpg" alt="Hongya Cave illuminated at night from Qiansimen Bridge" loading="lazy" decoding="async">
+  <img src="/preview-images/09-liziba.png" alt="Liziba light rail passing through a residential building" loading="lazy" decoding="async">
+  <img src="/preview-images/10-yangtze-cableway.jpg" alt="Yangtze River cableway over downtown Chongqing" loading="lazy" decoding="async">
+</figure>
 
-<!-- IMAGE: Liziba station / train through building -->
-
-![Liziba light rail passing through a residential building](/preview-images/09-liziba.png)
-
-<!-- IMAGE: Yangtze River cable car -->
-
-![Yangtze River cableway over downtown Chongqing](/preview-images/10-yangtze-cableway.jpg)
+<section class="cinematic-section">
 
 You don't experience scale by looking at it. You experience it by walking ten minutes and realizing you haven't left a single block. The density is the texture of daily life: the noodle shop on level B2, the tea house on level 4, the river somewhere below all of it.
 
 Our closing hotpot dinner was in Chongqing, which is where hotpot is supposed to be eaten. Numbing, sweating, two hours of broth and conversation. The kind of meal that's also a marker. The trip is ending.
 
-<!-- IMAGE: hotpot dinner -->
+</section>
 
-![Chongqing hotpot at the table](/preview-images/11-hotpot-2.jpg)
+<figure class="media-wide">
+  <img src="/preview-images/11-hotpot-2.jpg" alt="Chongqing hotpot at the table" loading="lazy" decoding="async">
+</figure>
+
+<section class="cinematic-ending">
 
 ## What I'll remember
 
@@ -120,6 +140,8 @@ Forty-eight hours after a quiet bamboo raft on the Li River, I was watching neon
 
 I went in expecting to be impressed by the tech and came out thinking more about the calm: how a country of 1.4 billion people manages to feel, on the ground, like it's running smoothly.
 
-<!-- IMAGE: closing shot , sunset / departure / quiet moment (no preview , your photo goes here) -->
+</section>
 
-![closing shot](/preview-images/15-closing-shot.jpg)
+<figure class="media-full">
+  <img src="/preview-images/15-closing-shot.jpg" alt="Closing view from the China trip" loading="lazy" decoding="async">
+</figure>
