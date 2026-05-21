@@ -4,3 +4,6 @@ node_modules/
 
 # migration script artifacts
 scripts/.cache/
+
+# playwright MCP session captures
+.playwright-mcp/
