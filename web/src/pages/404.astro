@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Not Found" description="That page wandered off.">
+  <section class="reading not-found">
+    <p class="eyebrow">404</p>
+    <h1>This page wandered off.</h1>
+    <p>
+      The link may have moved during the site rebuild. Try the
+      <a href="/">home page</a>, the <a href="/archive">archive</a>, or the
+      <a href="/travel">travel map</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+  .not-found h1 {
+    margin: 0.3rem 0 1rem;
+  }
+  .not-found a {
+    color: var(--accent);
+  }
+</style>
