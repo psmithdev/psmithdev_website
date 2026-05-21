@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 type Entry = CollectionEntry<'posts'> | CollectionEntry<'travel'>;
 
@@ -16,9 +17,24 @@ const formatted = publishedAt.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
+
+// Prev/next within the same collection, sorted by date desc.
+const siblings = (
+  await getCollection(entry.collection, ({ data }) => !data.draft)
+).sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+const idx = siblings.findIndex((s) => s.slug === entry.slug);
+const newer = idx > 0 ? siblings[idx - 1] : null;
+const older = idx >= 0 && idx < siblings.length - 1 ? siblings[idx + 1] : null;
+
+const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
 ---
 
-<BaseLayout title={title} description={excerpt}>
+<BaseLayout
+  title={title}
+  description={excerpt}
+  image={cover}
+  type="article"
+>
   <article>
     <header class="post-header reading">
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}
@@ -45,6 +61,23 @@ const formatted = publishedAt.toLocaleDateString('en-US', {
     <div class="post-body reading">
       <slot />
     </div>
+
+    {(newer || older) && (
+      <nav class="post-nav reading" aria-label="More posts">
+        {older ? (
+          <a class="prev" href={hrefFor(older)}>
+            <span class="dir">← Older</span>
+            <span class="title">{older.data.title}</span>
+          </a>
+        ) : <span />}
+        {newer ? (
+          <a class="next" href={hrefFor(newer)}>
+            <span class="dir">Newer →</span>
+            <span class="title">{newer.data.title}</span>
+          </a>
+        ) : <span />}
+      </nav>
+    )}
   </article>
 </BaseLayout>
 
@@ -84,5 +117,35 @@ const formatted = publishedAt.toLocaleDateString('en-US', {
   .post-body :global(h2),
   .post-body :global(h3) {
     margin-top: 2.2em;
+  }
+
+  .post-nav {
+    margin: 3rem auto 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .post-nav a {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .post-nav .next {
+    text-align: right;
+  }
+  .post-nav .dir {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    margin-bottom: 0.2rem;
+  }
+  .post-nav .title {
+    font-size: var(--step-0);
+  }
+  .post-nav a:hover .title {
+    color: var(--accent);
   }
 </style>
