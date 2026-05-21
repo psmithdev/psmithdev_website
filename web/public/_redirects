@@ -1,4 +1,48 @@
-# Hugo → Astro URL migration. Travel posts moved from /posts/ to /travel/.
+# Hashnode root slugs → new Astro paths (essays/making/tech → /posts/, travel → /travel/)
+/psychedelic-science-2023            /posts/psychedelic-science-2023/                  301
+/zen-meditation                      /posts/zen-meditation/                            301
+/hiking-with-tyler                   /posts/hiking-with-tyler/                         301
+/missouri-nursing-homes-grandma-2022 /posts/missouri-nursing-homes-grandma-2022/       301
+/arch-linux-dell-xps-13-9343         /posts/arch-linux-dell-xps-13-9343/               301
+/lessons-from-if-intermittent-fasting /posts/lessons-from-if-intermittent-fasting/     301
+/half-and-full-marathon-training-log /posts/half-and-full-marathon-training-log/       301
+/sailboat-maintenance                /posts/sailboat-maintenance/                      301
+/electric-daisy-carnival             /posts/electric-daisy-carnival/                   301
+/tomorrowland                        /posts/tomorrowland/                              301
+/grandmas-backyard-brook-footbridge  /posts/grandmas-backyard-brook-footbridge/        301
+/godfather-steves-deck               /posts/godfather-steves-deck/                     301
+/grandpas-workshop                   /posts/grandpas-workshop/                         301
+/fine-furniture-making               /posts/fine-furniture-making/                     301
+/birdhouse                           /posts/birdhouse/                                 301
+/sign-making-and-plaques             /posts/sign-making-and-plaques/                   301
+/wood-turned-pens                    /posts/wood-turned-pens/                          301
+/cutting-boards-and-serving-trays    /posts/cutting-boards-and-serving-trays/          301
+/trestle-bed-frame-twin-size         /posts/trestle-bed-frame-twin-size/               301
+/baby-high-chair                     /posts/baby-high-chair/                           301
+/glass-flower-storage-box            /posts/glass-flower-storage-box/                  301
+/soapmaking                          /posts/soapmaking/                                301
+/bread                               /posts/bread/                                     301
+
+# Slug rename — old Hashnode form dropped "-on-the-"
+/giant-wooden-hearts-on-the-connecticut-state-capitol-lawn /posts/giant-wooden-hearts-connecticut-state-capitol-lawn/ 301
+/posts/giant-wooden-hearts-on-the-connecticut-state-capitol-lawn /posts/giant-wooden-hearts-connecticut-state-capitol-lawn/ 301
+
+# Hashnode travel root slugs → /travel/
+/amsterdam-the-netherlands           /travel/amsterdam-the-netherlands/                301
+/london-united-kingdom               /travel/london-united-kingdom/                    301
+/berlin-germany                      /travel/berlin-germany/                           301
+/paris-france                        /travel/paris-france/                             301
+/zagarolo-italy                      /travel/zagarolo-italy/                           301
+/vienna-austria                      /travel/vienna-austria/                           301
+/budapest-hungary                    /travel/budapest-hungary/                         301
+/venice-italy                        /travel/venice-italy/                             301
+/florence-italy                      /travel/florence-italy/                           301
+/brussels-belgium                    /travel/brussels-belgium/                         301
+/rome-italy                          /travel/rome-italy/                               301
+/la-cinque-terre-hike-italy          /travel/la-cinque-terre-hike-italy/               301
+/prague-czech-republic               /travel/prague-czech-republic/                    301
+
+# Hugo → Astro: travel posts moved from /posts/ to /travel/.
 /posts/amsterdam-the-netherlands     /travel/amsterdam-the-netherlands/      301
 /posts/berlin-germany                /travel/berlin-germany/                 301
 /posts/brussels-belgium              /travel/brussels-belgium/               301
@@ -15,3 +59,4 @@
 
 # Removed stub post — redirect to home rather than 404.
 /posts/giraffehello                  /                                       301
+/giraffehello                        /                                       301
