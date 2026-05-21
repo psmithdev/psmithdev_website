@@ -217,7 +217,7 @@ const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
   .cinematic-hero-copy {
     position: relative;
     z-index: 1;
-    width: min(64rem, 100%);
+    width: min(58rem, 100%);
     padding: 7rem 1.5rem;
   }
 
@@ -230,22 +230,29 @@ const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
   }
 
   .cinematic-hero h1 {
-    margin: 0.7rem 0 1rem;
-    font-size: clamp(2.9rem, 7vw, 5.6rem);
-    line-height: 1.05;
+    margin: 0.7rem 0 1.1rem;
+    font-size: clamp(2.9rem, 5.8vw, 5rem);
+    line-height: 1.02;
     letter-spacing: 0;
     text-wrap: balance;
   }
 
   .cinematic-hero .dek {
-    font-size: var(--step-1);
+    max-width: 44rem;
+    font-size: var(--step-0);
     line-height: 1.55;
   }
 
-  .cinematic-hero .byline,
+  .cinematic-hero .byline {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
   .scroll-cue {
     font-family: var(--font-sans);
-    font-size: var(--step--1);
+    font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
@@ -277,7 +284,7 @@ const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
   }
 
   .cinematic-body :global(.cinematic-intro) {
-    font-size: var(--step-1);
+    font-size: var(--step-0);
     line-height: 1.75;
   }
 
@@ -305,7 +312,7 @@ const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
 
   .cinematic-body :global(.cinematic-section p),
   .cinematic-body :global(.cinematic-ending p) {
-    font-size: var(--step-1);
+    font-size: var(--step-0);
     line-height: 1.75;
   }
 
@@ -461,7 +468,11 @@ const hrefFor = (e: Entry) => `/${e.collection}/${e.slug}/`;
     }
 
     .cinematic-hero-copy {
-      padding: 5rem 1.2rem;
+      padding: 4.5rem 1.2rem;
+    }
+
+    .cinematic-hero h1 {
+      font-size: clamp(2.65rem, 13vw, 4.2rem);
     }
 
     .scroll-cue {

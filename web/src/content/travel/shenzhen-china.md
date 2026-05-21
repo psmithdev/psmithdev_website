@@ -101,7 +101,9 @@ The karst mountains around the Li River don't look real. They look like a Chines
 </figure>
 
 <section class="cinematic-section">
+
 What Yangshuo reminded me is that the megacity China is one China, not the only one. The pace in the village is older than anything in Shenzhen by a couple thousand years, and it isn't going anywhere. People grow rice. People sit. The light moves across the karsts in the late afternoon and it's beautiful.
+
 </section>
 
 <section class="cinematic-section">
@@ -138,7 +140,7 @@ Our closing hotpot dinner was in Chongqing, which is where hotpot is supposed to
 
 Forty-eight hours after a quiet bamboo raft on the Li River, I was watching neon reflect off the Yangtze from a cable car a thousand feet above downtown Chongqing. Both felt like China.
 
-I went in expecting to be impressed by the tech and came out thinking more about the calm: how a country of 1.4 billion people manages to feel, on the ground, like it's running smoothly.
+I went in expecting to be impressed by the technology and came out thinking more about the calm: how a country of 1.4 billion people manages to feel, on the ground, like it's running smoothly.
 
 </section>
 
