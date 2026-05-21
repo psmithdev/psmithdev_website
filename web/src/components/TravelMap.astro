@@ -91,7 +91,7 @@ const config = { center, zoom, interactive };
       interactive: boolean;
     };
 
-    const { default: maplibregl } = await loadMapLibre();
+    const maplibregl = await loadMapLibre();
 
     const map = new maplibregl.Map({
       container: mapEl,
