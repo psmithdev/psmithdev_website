@@ -1,5 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { imageAttrs } from '../utils/imageMetadata';
+
+const quoteImage =
+  'https://assets.psmith.dev/posts/e85bc392c22ba94ea95697ba53005c48de332f07a1288e3140f4c189cb6abe85.avif';
+const grandmotherImage =
+  'https://assets.psmith.dev/posts/a060c7d83b0972c3c5691fb909cb50a4012bf7ed23e93c72b556cc00675882cb.jpeg';
+const motherImage =
+  'https://assets.psmith.dev/posts/ee9ff83379db2c8416f2e50f9c8b60763a4255dbd86ab03464af56dbffca61e4.jpeg';
+const familyImage =
+  'https://assets.psmith.dev/posts/597200e6936720e01cef46540c7e684f7e4eb7bf4d547ba5dab1915106b45a45.jpeg';
 ---
 
 <BaseLayout title="About" description="A bit about Parker Smith — maker, traveler, and the people who shaped him.">
@@ -16,40 +26,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <figure class="quote">
       <img
-        src="https://assets.psmith.dev/posts/e85bc392c22ba94ea95697ba53005c48de332f07a1288e3140f4c189cb6abe85.avif"
+        src={quoteImage}
         alt="We know what we are, but know not what we may be. — William Shakespeare"
         loading="lazy"
         decoding="async"
+        {...imageAttrs(quoteImage)}
       />
     </figure>
 
     <h2>My Grandmother</h2>
     <figure>
       <img
-        src="https://assets.psmith.dev/posts/a060c7d83b0972c3c5691fb909cb50a4012bf7ed23e93c72b556cc00675882cb.jpeg"
+        src={grandmotherImage}
         alt="Parker with his grandmother"
         loading="lazy"
         decoding="async"
+        {...imageAttrs(grandmotherImage)}
       />
     </figure>
 
     <h2>My Grandmother and Mother</h2>
     <figure>
       <img
-        src="https://assets.psmith.dev/posts/ee9ff83379db2c8416f2e50f9c8b60763a4255dbd86ab03464af56dbffca61e4.jpeg"
+        src={motherImage}
         alt="Parker with his grandmother and mother"
         loading="lazy"
         decoding="async"
+        {...imageAttrs(motherImage)}
       />
     </figure>
 
     <h2>My Family</h2>
     <figure>
       <img
-        src="https://assets.psmith.dev/posts/597200e6936720e01cef46540c7e684f7e4eb7bf4d547ba5dab1915106b45a45.jpeg"
+        src={familyImage}
         alt="The Smith family"
         loading="lazy"
         decoding="async"
+        {...imageAttrs(familyImage)}
       />
     </figure>
   </section>

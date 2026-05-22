@@ -8,6 +8,7 @@
     "build": "astro build",
     "postbuild": "node scripts/check-no-hashnode.mjs",
     "audit:content": "node scripts/audit-content.mjs",
+    "images:metadata": "node scripts/update-image-metadata.mjs",
     "smoke:prod": "node scripts/smoke-deploy.mjs",
     "preview": "astro preview",
     "astro": "astro",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "probe-image-size": "^7.3.0",
     "typescript": "^6.0.3"
   },
   "overrides": {
