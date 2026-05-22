@@ -38,7 +38,12 @@ const linkFor = (entry: (typeof recent)[number]) =>
       <h2>Travel</h2>
       <a href="/travel" class="more">Open full map →</a>
     </header>
-    <TravelMap height="360px" interactive={false} />
+    <TravelMap
+      height="360px"
+      interactive={false}
+      autoload={false}
+      loadLabel="Load map"
+    />
   </section>
 
   <section class="recent wide">

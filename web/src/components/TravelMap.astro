@@ -73,16 +73,43 @@ const config = { center, zoom, interactive, fitToPins, autoload };
 </div>
 
 <script>
+  import mapLibreCssUrl from 'maplibre-gl/dist/maplibre-gl.css?url';
+
   type MapLibre = typeof import('maplibre-gl');
 
-  // MapLibre is ~1MB; load it only when a map scrolls into view.
+  // MapLibre is heavy; load its JS and CSS only when a map is activated.
   let mapLibPromise: Promise<MapLibre> | null = null;
+  let mapCssPromise: Promise<void> | null = null;
+
+  function loadMapCss(): Promise<void> {
+    if (!mapCssPromise) {
+      mapCssPromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector<HTMLLinkElement>(
+          `link[href="${mapLibreCssUrl}"]`
+        );
+        if (existing) {
+          resolve();
+          return;
+        }
+
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = mapLibreCssUrl;
+        link.addEventListener('load', () => resolve(), { once: true });
+        link.addEventListener('error', () => reject(new Error('Map CSS failed to load')), {
+          once: true,
+        });
+        document.head.appendChild(link);
+      });
+    }
+    return mapCssPromise;
+  }
+
   function loadMapLibre(): Promise<MapLibre> {
     if (!mapLibPromise) {
-      mapLibPromise = Promise.all([
-        import('maplibre-gl'),
-        import('maplibre-gl/dist/maplibre-gl.css'),
-      ]).then(([mod]) => mod);
+      mapLibPromise = Promise.all([import('maplibre-gl'), loadMapCss()]).then(
+        ([mod]) => mod
+      );
     }
     return mapLibPromise;
   }
@@ -303,15 +330,25 @@ const config = { center, zoom, interactive, fitToPins, autoload };
   }
 
   .travel-pin {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+
+  .travel-pin::before {
+    content: '';
+    display: block;
     width: 14px;
     height: 14px;
+    margin: 15px;
     border-radius: 50%;
     background: var(--accent);
     border: 2px solid var(--bg);
     box-shadow: 0 1px 3px rgba(42, 36, 30, 0.35);
-    padding: 0;
-    cursor: pointer;
-    transition: transform 0.15s ease;
   }
 
   .travel-pin:hover {

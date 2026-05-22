@@ -35,6 +35,11 @@ export default defineConfig({
   site: 'https://psmith.dev',
   output: 'static',
   integrations: [sitemap()],
+  vite: {
+    build: {
+      sourcemap: true,
+    },
+  },
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex, rehypeLazyImages],
