@@ -57,6 +57,11 @@
 /posts/vienna-austria                /travel/vienna-austria/                 301
 /posts/zagarolo-italy                /travel/zagarolo-italy/                 301
 
+# Slug rename — shenzhen-china → china.
+/travel/shenzhen-china               /travel/china/                          301
+/posts/shenzhen-china                /travel/china/                          301
+/shenzhen-china                      /travel/china/                          301
+
 # Removed stub post — redirect to home rather than 404.
 /posts/giraffehello                  /                                       301
 /giraffehello                        /                                       301
