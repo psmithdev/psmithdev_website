@@ -1,10 +1,12 @@
 ---
 title: Psychedelic Science 2023
+excerpt: "The Psychedelic Science 2023 conference was an immersive and enlightening experience for me. As soon as I entered the Colorado Convention Center,..."
 publishedAt: 2023-06-28
 tags:
   - travel
   - psychedelics
 cover: "https://assets.psmith.dev/posts/2814d9dee5229ae28ec21c092e7a3634a593d2b2fd43b9ef64ff24f653f1a438.jpeg"
+coverAlt: "Cover image for Psychedelic Science 2023"
 category: essay
 ---
 
@@ -18,7 +20,7 @@ Throughout the five-day conference, I attended numerous lectures, panels, and wo
 
 Another highlight was the workshop on Psychedelics as THe Great Disrupters: Reconstructing the Future of Mental Healthcare, led by Dr. Ben Sessa. The hands-on experience and the opportunity to interact directly with experts and fellow attendees provided invaluable practical knowledge that I will certainly apply in my life, family, friends, and mental health in general.
 
-![](https://assets.psmith.dev/posts/b022379b2de18ded9995d906ef2542e6083bedc7862f56ee712a3ecbf7b33111.jpeg)
+![Image 1 from Psychedelic Science 2023](https://assets.psmith.dev/posts/b022379b2de18ded9995d906ef2542e6083bedc7862f56ee712a3ecbf7b33111.jpeg)
 
 Program Highlights
 

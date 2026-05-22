@@ -1,7 +1,9 @@
 ---
 title: Hiking with Tyler
+excerpt: "Photos and notes from Hiking with Tyler."
 publishedAt: 2022-11-18
 cover: "https://assets.psmith.dev/posts/27baf8c41e2df249cbfb8a789d54ce222fa0d13c79a3dfde7e6fd856d9772ddd.jpeg"
+coverAlt: "Cover image for Hiking with Tyler"
 category: essay
 ---
 

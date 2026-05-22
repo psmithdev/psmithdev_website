@@ -1,7 +1,9 @@
 ---
 title: Missouri Nursing Homes Grandma 2022
+excerpt: "Photos and notes from Missouri Nursing Homes Grandma 2022."
 publishedAt: 2022-11-09
 cover: "https://assets.psmith.dev/posts/2beffe3f90e5097e8c142c5f9a6664c28f594bf3d5d6f1a79a0cd434f7e2c182.jpeg"
+coverAlt: "Cover image for Missouri Nursing Homes Grandma 2022"
 category: essay
 ---
 
