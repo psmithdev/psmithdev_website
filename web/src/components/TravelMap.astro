@@ -3,10 +3,11 @@ import { getCollection } from 'astro:content';
 
 interface Props {
   height?: string;
-  /** Initial map center [lng, lat]. Defaults to a frame that fits Europe + UK. */
+  /** Initial map center [lng, lat]. Used before fitting to pins. */
   center?: [number, number];
   zoom?: number;
   interactive?: boolean;
+  fitToPins?: boolean;
   class?: string;
 }
 
@@ -15,6 +16,7 @@ const {
   center = [12, 47],
   zoom = 3.4,
   interactive = true,
+  fitToPins = true,
   class: className = '',
 } = Astro.props;
 
@@ -36,7 +38,7 @@ const pins = entries.flatMap((e) => {
   }));
 });
 
-const config = { center, zoom, interactive };
+const config = { center, zoom, interactive, fitToPins };
 ---
 
 <div class:list={['travel-map-wrap', className]} style={`height:${height}`}>
@@ -91,6 +93,7 @@ const config = { center, zoom, interactive };
       center: [number, number];
       zoom: number;
       interactive: boolean;
+      fitToPins: boolean;
     };
 
     const maplibregl = await loadMapLibre();
@@ -123,6 +126,8 @@ const config = { center, zoom, interactive };
     if (cfg.interactive) {
       map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     }
+
+    const bounds = new maplibregl.LngLatBounds();
 
     for (const pin of pins) {
       const el = document.createElement('button');
@@ -165,6 +170,22 @@ const config = { center, zoom, interactive };
         .setLngLat([pin.lng, pin.lat])
         .setPopup(popup)
         .addTo(map);
+      bounds.extend([pin.lng, pin.lat]);
+    }
+
+    if (cfg.fitToPins && !bounds.isEmpty()) {
+      map.once('load', () => {
+        if (pins.length === 1) {
+          map.flyTo({ center: bounds.getCenter(), zoom: cfg.zoom, duration: 0 });
+          return;
+        }
+
+        map.fitBounds(bounds, {
+          padding: { top: 44, right: 44, bottom: 44, left: 44 },
+          maxZoom: cfg.zoom,
+          duration: 0,
+        });
+      });
     }
   }
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TravelMap from '../components/TravelMap.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
@@ -9,16 +10,6 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
 const travel = (await getCollection('travel', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
 );
-
-const travelPins = travel.slice(0, 8).map((entry) => {
-  const { lat, lng } = entry.data.location;
-  return {
-    title: entry.data.title,
-    href: `/travel/${entry.id}/`,
-    x: Math.min(88, Math.max(12, ((lng + 12) / 125) * 100)),
-    y: Math.min(82, Math.max(18, ((55 - lat) / 37) * 100)),
-  };
-});
 
 const recent = [...posts, ...travel]
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
@@ -47,21 +38,7 @@ const linkFor = (entry: (typeof recent)[number]) =>
       <h2>Travel</h2>
       <a href="/travel" class="more">Open full map →</a>
     </header>
-    <a href="/travel" class="travel-preview" aria-label="Open full travel map">
-      <span class="route-line route-line-1"></span>
-      <span class="route-line route-line-2"></span>
-      <span class="route-line route-line-3"></span>
-      {
-        travelPins.map((pin) => (
-          <span
-            class="preview-pin"
-            style={`--x:${pin.x}%;--y:${pin.y}%`}
-            title={pin.title}
-          />
-        ))
-      }
-      <span class="preview-label">Open the travel map</span>
-    </a>
+    <TravelMap height="360px" interactive={false} />
   </section>
 
   <section class="recent wide">
@@ -125,88 +102,6 @@ const linkFor = (entry: (typeof recent)[number]) =>
 
   .map-teaser {
     padding: 1rem 1.2rem 2rem;
-  }
-
-  .travel-preview {
-    position: relative;
-    display: block;
-    height: 360px;
-    overflow: hidden;
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    background:
-      linear-gradient(rgba(177, 88, 58, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(177, 88, 58, 0.08) 1px, transparent 1px),
-      radial-gradient(circle at 70% 28%, rgba(47, 111, 101, 0.18), transparent 22%),
-      radial-gradient(circle at 36% 58%, rgba(177, 88, 58, 0.16), transparent 24%),
-      var(--bg-elevated);
-    background-size:
-      48px 48px,
-      48px 48px,
-      auto,
-      auto,
-      auto;
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  .route-line {
-    position: absolute;
-    display: block;
-    height: 2px;
-    background: rgba(91, 82, 71, 0.22);
-    transform-origin: left center;
-  }
-
-  .route-line-1 {
-    left: 18%;
-    top: 56%;
-    width: 34%;
-    transform: rotate(-18deg);
-  }
-
-  .route-line-2 {
-    left: 43%;
-    top: 47%;
-    width: 28%;
-    transform: rotate(15deg);
-  }
-
-  .route-line-3 {
-    left: 60%;
-    top: 55%;
-    width: 20%;
-    transform: rotate(-30deg);
-  }
-
-  .preview-pin {
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: 0.82rem;
-    height: 0.82rem;
-    border: 2px solid var(--bg);
-    border-radius: 999px;
-    background: var(--accent);
-    box-shadow: 0 2px 8px rgba(42, 36, 30, 0.28);
-    transform: translate(-50%, -50%);
-  }
-
-  .preview-label {
-    position: absolute;
-    left: 1rem;
-    bottom: 1rem;
-    padding: 0.45rem 0.65rem;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    background: rgba(250, 246, 240, 0.86);
-    color: var(--ink-soft);
-    font-family: var(--font-sans);
-    font-size: var(--step--1);
-  }
-
-  .travel-preview:hover .preview-label {
-    color: var(--accent);
   }
 
   .recent {
