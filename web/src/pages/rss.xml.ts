@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
       title: entry.data.title,
       pubDate: entry.data.publishedAt,
       description: entry.data.excerpt ?? '',
-      link: `/posts/${entry.slug}/`,
+      link: `/posts/${entry.id}/`,
       categories: entry.data.tags,
     })),
     ...travel.map((entry) => ({
@@ -20,7 +20,7 @@ export async function GET(context: APIContext) {
       description:
         entry.data.excerpt ??
         `Travel notes from ${entry.data.location.city}, ${entry.data.location.country}.`,
-      link: `/travel/${entry.slug}/`,
+      link: `/travel/${entry.id}/`,
       categories: [...entry.data.tags, 'travel'],
     })),
   ].sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());

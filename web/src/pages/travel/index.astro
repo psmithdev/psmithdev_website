@@ -30,7 +30,7 @@ const entries = (
         <ul class="list">
           {entries.map((entry) => (
             <li>
-              <a href={`/travel/${entry.slug}/`}>
+              <a href={`/travel/${entry.id}/`}>
                 <h2>{entry.data.title}</h2>
                 {entry.data.excerpt && (
                   <p class="muted">{entry.data.excerpt}</p>

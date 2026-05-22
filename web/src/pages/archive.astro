@@ -14,13 +14,13 @@ type Row = {
 
 const rows: Row[] = [
   ...posts.map((p) => ({
-    href: `/posts/${p.slug}/`,
+    href: `/posts/${p.id}/`,
     title: p.data.title,
     date: p.data.publishedAt,
     kind: p.data.category,
   })),
   ...travel.map((t) => ({
-    href: `/travel/${t.slug}/`,
+    href: `/travel/${t.id}/`,
     title: t.data.title,
     date: t.data.publishedAt,
     kind: 'travel' as const,

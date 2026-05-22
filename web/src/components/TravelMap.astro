@@ -24,7 +24,7 @@ const pins = entries.flatMap((e) => {
   const hasStops = !!e.data.stops?.length;
   const places = hasStops ? e.data.stops! : [e.data.location];
   return places.map((p) => ({
-    slug: e.slug,
+    slug: e.id,
     title: e.data.title,
     sublabel: hasStops ? `${p.city}, ${p.country}` : null,
     city: p.city,
@@ -32,7 +32,7 @@ const pins = entries.flatMap((e) => {
     lat: p.lat,
     lng: p.lng,
     cover: e.data.cover ?? null,
-    href: `/travel/${e.slug}/`,
+    href: `/travel/${e.id}/`,
   }));
 });
 

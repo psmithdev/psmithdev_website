@@ -14,13 +14,16 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.7.2",
-    "astro": "^5.8.0",
+    "astro": "^6.3.7",
     "maplibre-gl": "^5.24.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "typescript": "^5.7.0"
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "yaml": "^2.9.0"
   }
 }

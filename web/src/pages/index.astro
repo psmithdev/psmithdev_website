@@ -20,8 +20,8 @@ const fmt = (d: Date) =>
 
 const linkFor = (entry: (typeof recent)[number]) =>
   entry.collection === 'travel'
-    ? `/travel/${entry.slug}/`
-    : `/posts/${entry.slug}/`;
+    ? `/travel/${entry.id}/`
+    : `/posts/${entry.id}/`;
 ---
 
 <BaseLayout>

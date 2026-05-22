@@ -24,7 +24,7 @@ const fmt = (d: Date) =>
         <ul class="list">
           {essays.map((e) => (
             <li>
-              <a href={`/posts/${e.slug}/`}>
+              <a href={`/posts/${e.id}/`}>
                 <p class="eyebrow">{fmt(e.data.publishedAt)}</p>
                 <h2>{e.data.title}</h2>
                 {e.data.excerpt && <p class="muted">{e.data.excerpt}</p>}
