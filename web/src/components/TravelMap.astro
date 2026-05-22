@@ -8,6 +8,8 @@ interface Props {
   zoom?: number;
   interactive?: boolean;
   fitToPins?: boolean;
+  autoload?: boolean;
+  loadLabel?: string;
   class?: string;
 }
 
@@ -17,6 +19,8 @@ const {
   zoom = 3.4,
   interactive = true,
   fitToPins = true,
+  autoload = true,
+  loadLabel = 'Load interactive map',
   class: className = '',
 } = Astro.props;
 
@@ -38,11 +42,22 @@ const pins = entries.flatMap((e) => {
   }));
 });
 
-const config = { center, zoom, interactive, fitToPins };
+const config = { center, zoom, interactive, fitToPins, autoload };
 ---
 
-<div class:list={['travel-map-wrap', className]} style={`height:${height}`}>
+<div
+  class:list={['travel-map-wrap', className]}
+  style={`height:${height}`}
+  data-map-pending={autoload ? undefined : 'true'}
+>
   <div class="travel-map" data-map />
+  {
+    !autoload && (
+      <div class="travel-map-gate" data-map-gate>
+        <button type="button" data-map-load>{loadLabel}</button>
+      </div>
+    )
+  }
   <script
     is:inline
     type="application/json"
@@ -94,7 +109,13 @@ const config = { center, zoom, interactive, fitToPins };
       zoom: number;
       interactive: boolean;
       fitToPins: boolean;
+      autoload: boolean;
     };
+
+    if (wrap.dataset.mapLoaded === 'true') return;
+    wrap.dataset.mapLoaded = 'true';
+    wrap.removeAttribute('data-map-pending');
+    wrap.querySelector('[data-map-gate]')?.remove();
 
     const maplibregl = await loadMapLibre();
 
@@ -189,8 +210,7 @@ const config = { center, zoom, interactive, fitToPins };
     }
   }
 
-  // Initialize each map on the page once it scrolls into view.
-  document.querySelectorAll<HTMLElement>('.travel-map-wrap').forEach((wrap) => {
+  function observeMap(wrap: HTMLElement) {
     if (!('IntersectionObserver' in window)) {
       init(wrap);
       return;
@@ -208,6 +228,21 @@ const config = { center, zoom, interactive, fitToPins };
       { rootMargin: '200px' }
     );
     io.observe(wrap);
+  }
+
+  // Initialize each map on intent: either scroll into view or explicit click.
+  document.querySelectorAll<HTMLElement>('.travel-map-wrap').forEach((wrap) => {
+    const cfgEl = wrap.querySelector<HTMLElement>('[data-map-config]');
+    const cfg = JSON.parse(cfgEl?.textContent || '{}') as { autoload?: boolean };
+    if (cfg.autoload !== false) {
+      observeMap(wrap);
+      return;
+    }
+    wrap.querySelector<HTMLButtonElement>('[data-map-load]')?.addEventListener(
+      'click',
+      () => init(wrap),
+      { once: true }
+    );
   });
 </script>
 
@@ -231,6 +266,45 @@ const config = { center, zoom, interactive, fitToPins };
   .travel-map {
     width: 100%;
     height: 100%;
+  }
+
+  .travel-map-wrap[data-map-pending='true'] .travel-map {
+    opacity: 0;
+  }
+
+  .travel-map-gate {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background:
+      linear-gradient(rgba(177, 88, 58, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(177, 88, 58, 0.08) 1px, transparent 1px),
+      radial-gradient(circle at 26% 58%, rgba(177, 88, 58, 0.16), transparent 24%),
+      radial-gradient(circle at 72% 34%, rgba(47, 111, 101, 0.18), transparent 22%),
+      var(--bg-elevated);
+    background-size:
+      48px 48px,
+      48px 48px,
+      auto,
+      auto,
+      auto;
+  }
+
+  .travel-map-gate button {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: rgba(250, 246, 240, 0.9);
+    color: var(--ink);
+    cursor: pointer;
+    font: inherit;
+    font-family: var(--font-sans);
+    padding: 0.65rem 0.9rem;
+  }
+
+  .travel-map-gate button:hover,
+  .travel-map-gate button:focus-visible {
+    color: var(--accent);
   }
 
   .travel-pin {
