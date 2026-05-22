@@ -42,11 +42,13 @@ const config = { center, zoom, interactive };
 <div class:list={['travel-map-wrap', className]} style={`height:${height}`}>
   <div class="travel-map" data-map />
   <script
+    is:inline
     type="application/json"
     data-map-pins
     set:html={JSON.stringify(pins).replace(/</g, '\\u003c')}
   />
   <script
+    is:inline
     type="application/json"
     data-map-config
     set:html={JSON.stringify(config).replace(/</g, '\\u003c')}
