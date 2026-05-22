@@ -8,9 +8,13 @@
     "build": "astro build",
     "postbuild": "node scripts/check-no-hashnode.mjs",
     "audit:content": "node scripts/audit-content.mjs",
+    "smoke:prod": "node scripts/smoke-deploy.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
