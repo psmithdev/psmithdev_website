@@ -69,7 +69,9 @@ Nobody in Shenzhen points at the robot. The robot is just doing its job.
   <div class="sticky-stack">
     <img src="https://assets.psmith.dev/posts/590fe4e475592fe72c98b9053b3f023ff23fbc09cde41d4b051ceb5ff4bdc5b5.jpg" alt="Huaqiangbei electronics market intersection in Shenzhen" loading="lazy" decoding="async">
     <img src="https://assets.psmith.dev/posts/21f7c627d06d3355053b55d385f45fd685b508a9314b599bb57fcc247f796306.jpg" alt="BYD electric vehicle on a Shenzhen street" loading="lazy" decoding="async">
-    <img src="https://assets.psmith.dev/posts/6eddb4ceb54e37a1a8c41192739abef994c5bc680509fd3b3f87ff28915b39f1.jpg" alt="Autonomous sidewalk delivery robot" loading="lazy" decoding="async">
+    <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-service-robot.jpg" aria-label="Autonomous service robot rolling through a hotel hallway">
+      <source src="https://assets.psmith.dev/posts/china-service-robot.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
@@ -88,12 +90,16 @@ The karst mountains around the Li River don't look real. They look like a Chines
 </section>
 
 <figure class="media-full">
-  <img src="https://assets.psmith.dev/posts/40f903d77206796fe64908db372d8602297d132d48225fcf3f5238c0d1832ee3.jpg" alt="Karst peaks rising along the Li River" loading="lazy" decoding="async">
+  <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-karst-landscape.jpg" aria-label="Karst mountains and village roads outside Yangshuo">
+    <source src="https://assets.psmith.dev/posts/china-karst-landscape.mp4" type="video/mp4">
+  </video>
 </figure>
 
 <figure class="image-pair" aria-label="Yangshuo countryside and cafe scenes">
+  <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-bamboo-raft.jpg" aria-label="Bamboo rafts moving down the river near Yangshuo">
+    <source src="https://assets.psmith.dev/posts/china-bamboo-raft.mp4" type="video/mp4">
+  </video>
   <img src="https://assets.psmith.dev/posts/6a4ca50568b5bd4dc995b23b5be336afb3098906a080e05f12915ec020bee417.jpg" alt="Yangshuo countryside karst landscape" loading="lazy" decoding="async">
-  <img src="https://assets.psmith.dev/posts/57fb1c2992abe7e54712a4b003f26c71b73e5e0dc326cad413962dce8d252405.jpg" alt="Cafe overlooking the Yangshuo countryside" loading="lazy" decoding="async">
 </figure>
 
 <section class="cinematic-section">

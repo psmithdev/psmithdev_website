@@ -349,10 +349,15 @@ const heroImageAttrs = imageAttrs(heroImage);
   }
 
   .cinematic-body :global(.media-wide img),
+  .cinematic-body :global(.media-wide video),
   .cinematic-body :global(.media-full img),
+  .cinematic-body :global(.media-full video),
   .cinematic-body :global(.image-pair img),
+  .cinematic-body :global(.image-pair video),
   .cinematic-body :global(.image-triptych img),
-  .cinematic-body :global(.sticky-scene img) {
+  .cinematic-body :global(.image-triptych video),
+  .cinematic-body :global(.sticky-scene img),
+  .cinematic-body :global(.sticky-scene video) {
     display: block;
     width: 100%;
     height: auto;
@@ -363,6 +368,10 @@ const heroImageAttrs = imageAttrs(heroImage);
 
   .cinematic-body :global(.media-full img) {
     min-height: 72vh;
+    max-height: 92vh;
+  }
+
+  .cinematic-body :global(.media-full video) {
     max-height: 92vh;
   }
 
@@ -382,6 +391,7 @@ const heroImageAttrs = imageAttrs(heroImage);
   }
 
   .cinematic-body :global(.image-pair img),
+  .cinematic-body :global(.image-pair video),
   .cinematic-body :global(.image-triptych img) {
     height: clamp(18rem, 44vw, 34rem);
   }
@@ -439,6 +449,11 @@ const heroImageAttrs = imageAttrs(heroImage);
   }
 
   .cinematic-body :global(.sticky-stack img) {
+    min-height: 22rem;
+    max-height: 32rem;
+  }
+
+  .cinematic-body :global(.sticky-stack video) {
     min-height: 22rem;
     max-height: 32rem;
   }
