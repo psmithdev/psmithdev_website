@@ -12,7 +12,7 @@ stops:
   - { city: Guilin, country: China, lat: 25.3652, lng: 110.4029 }
   - { city: Yangshuo, country: China, lat: 24.7782, lng: 110.4970 }
   - { city: Chongqing, country: China, lat: 29.5708, lng: 106.5431 }
-excerpt: "Ten days, four stops, and a country that feels like the future without trying to."
+excerpt: "Ten days, four stops, and a country that feels like the future."
 cover: "https://assets.psmith.dev/posts/Chongqing-images.jpg"
 coverAlt: "Night skyline in Chongqing"
 presentation: cinematic
@@ -23,9 +23,7 @@ kicker: "Ten days across China"
 
 <section class="cinematic-intro">
 
-Ten days. Four cities. Shenzhen, Guilin, Yangshuo, Chongqing. I went with a small group from Network School, nine of us, mostly left to our own pace. I didn't go in with strong expectations, which turned out to be the right move, because almost everything I thought I knew about China was off by a decade.
-
-The clearest way I can put it: China feels like the future, but also like itself.
+Ten days. Four cities. Shenzhen, Guilin, Yangshuo, Chongqing. I went with a small group from Network School, nine of us, mostly left to our own pace. I didn't go in with strong expectations.
 
 </section>
 
@@ -48,9 +46,9 @@ I'm used to American infrastructure and the small daily frictions you stop notic
 
 <blockquote class="pull">The surprise was not the technology.</blockquote>
 
-What surprised me wasn't the tech itself but how _calm_ it all felt. A Shenzhen subway station at rush hour is denser than anything I've seen in New York City, and somehow quieter. People queue. People wait. The system absorbs the load.
+What surprised me wasn't the tech itself but how _calm_ it all felt. A Shenzhen subway station at rush hour is denser than anything I've seen in New York City, and somehow quieter. People queue up in line. People wait.
 
-Our welcome dinner that first night in Nanshan was the first time I noticed it: a quiet restaurant, food arriving fast, and foreshadowing of a good week ahead.
+First dinner in Nahshan: quiet restaurant, fast food, a good start.
 
 </section>
 
@@ -63,11 +61,9 @@ Our welcome dinner that first night in Nanshan was the first time I noticed it: 
 
 ## Robots, drones, electric everything
 
-Then there's the visible-future stuff. The stuff that makes you laugh the first time you see it.
+EVs are everywhere in Shenzhen. The streets are quieter than I expected. Delivery robots roll by on the sidewalk and nobody looks up. Drones overhead is quite normal.
 
-EVs are the default. Not a third of the cars or half. Almost all of them, especially in Shenzhen. The streets are quiet in a way that took me a day to figure out: no engine noise. Delivery robots roll past you on the sidewalk and nobody looks up. Drones overhead.
-
-Nobody in Shenzhen points at the robot. The robot is just doing its job. The future, when it actually arrives, isn't marketed at you.
+Nobody in Shenzhen points at the robot. The robot is just doing its job.
 
   </div>
   <div class="sticky-stack">
@@ -85,9 +81,9 @@ Nobody in Shenzhen points at the robot. The robot is just doing its job. The fut
 
 ## The reset in Yangshuo & Guilin
 
-In the middle of all that, two days in Yangshuo.
+Two days in Yangshuo.
 
-The karst mountains around the Li River don't look real. They look like a Chinese landscape painting decided to insist on itself. We took a slow boat down the river, rented electric scooters for 30 yuan day rate, drank duck shit tea at a cafe overlooking a rice field, and didn't do much else.
+The karst mountains around the Li River don't look real. They look like a Chinese landscape painting. We took a slow boat down the river, rented electric scooters for 30 yuan day rate, drank duck shit tea at a cafe overlooking a rice field, and didn't do much else. Was great.
 
 </section>
 
@@ -102,7 +98,7 @@ The karst mountains around the Li River don't look real. They look like a Chines
 
 <section class="cinematic-section">
 
-What Yangshuo reminded me is that the megacity China is one China, not the only one. The pace in the village is older than anything in Shenzhen by a couple thousand years, and it isn't going anywhere. People grow rice. People sit. The light moves across the karsts in the late afternoon and it's beautiful.
+Yangshuo felt older and slower. Rice fields, scooters, karst mountains and late afternoon light shining on it all.
 
 </section>
 
@@ -110,9 +106,7 @@ What Yangshuo reminded me is that the megacity China is one China, not the only 
 
 ## The scale
 
-The cities are bigger than the numbers prepare you for.
-
-Shenzhen has a population larger than New York City's and didn't exist as a city forty years ago. Chongqing has 32 million people stacked into a vertical labyrinth where the eighth floor of one building is street level for another. You take an elevator to ground floor and it opens onto a highway. The Liziba light rail runs _through_ an apartment building. Hongya Cave at night looks like a special place that drew in all the tourists including myself.
+Shenzhen has a population larger than New York City's and didn't exist as a city forty years ago. Chongqing has 32 million people stacked into a vertical labyrinth where the eighth floor of one building is street level for another. You take an elevator to ground floor and it opens onto a highway. The Liziba light rail runs _through_ an apartment building.
 
 </section>
 
@@ -123,8 +117,6 @@ Shenzhen has a population larger than New York City's and didn't exist as a city
 </figure>
 
 <section class="cinematic-section">
-
-You don't experience scale by looking at it. You experience it by walking ten minutes and realizing you haven't left a single block.
 
 Our closing hotpot dinner was in Chongqing, which is where hotpot is supposed to be eaten. Numbing, sweating, two hours of broth and conversation. The kind of meal that's also a marker. The trip is ending. And I felt it the next morning.
 
@@ -140,7 +132,7 @@ Our closing hotpot dinner was in Chongqing, which is where hotpot is supposed to
 
 Forty-eight hours after a quiet bamboo raft on the Li River, I was watching neon reflect off the Yangtze from a cable car a thousand feet above downtown Chongqing. Both felt like China.
 
-I went in expecting to be impressed by the technology and came out thinking more about how easy it was: how a country of 1.4 billion people manages to feel, on the ground, like it's running smoothly.
+I expected the technology to be the thing I remembered. It was more how easy everything felt.
 
 </section>
 
