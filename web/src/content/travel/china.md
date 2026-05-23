@@ -69,7 +69,7 @@ Nobody in Shenzhen points at the robot. The robot is just doing its job.
   <div class="sticky-stack">
     <img src="https://assets.psmith.dev/posts/590fe4e475592fe72c98b9053b3f023ff23fbc09cde41d4b051ceb5ff4bdc5b5.jpg" alt="Huaqiangbei electronics market intersection in Shenzhen" loading="lazy" decoding="async">
     <img src="https://assets.psmith.dev/posts/21f7c627d06d3355053b55d385f45fd685b508a9314b599bb57fcc247f796306.jpg" alt="BYD electric vehicle on a Shenzhen street" loading="lazy" decoding="async">
-    <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-service-robot.jpg" aria-label="Autonomous service robot rolling through a hotel hallway" data-playback-rate="0.9">
+    <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-service-robot.jpg" aria-label="Autonomous service robot rolling through a hotel hallway" data-playback-rate="0.8">
       <source src="https://assets.psmith.dev/posts/china-service-robot.mp4" type="video/mp4">
     </video>
   </div>
@@ -90,13 +90,13 @@ The karst mountains around the Li River don't look real. They look like a Chines
 </section>
 
 <figure class="media-full">
-  <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-karst-landscape.jpg" aria-label="Karst mountains and village roads outside Yangshuo" data-playback-rate="0.9">
+  <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-karst-landscape.jpg" aria-label="Karst mountains and village roads outside Yangshuo" data-playback-rate="0.8">
     <source src="https://assets.psmith.dev/posts/china-karst-landscape.mp4" type="video/mp4">
   </video>
 </figure>
 
 <figure class="image-pair" aria-label="Yangshuo countryside and cafe scenes">
-  <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-bamboo-raft.jpg" aria-label="Bamboo rafts moving down the river near Yangshuo" data-playback-rate="0.9">
+  <video autoplay muted loop playsinline preload="metadata" poster="https://assets.psmith.dev/posts/china-bamboo-raft.jpg" aria-label="Bamboo rafts moving down the river near Yangshuo" data-playback-rate="0.8">
     <source src="https://assets.psmith.dev/posts/china-bamboo-raft.mp4" type="video/mp4">
   </video>
   <img src="https://assets.psmith.dev/posts/6a4ca50568b5bd4dc995b23b5be336afb3098906a080e05f12915ec020bee417.jpg" alt="Yangshuo countryside karst landscape" loading="lazy" decoding="async">
