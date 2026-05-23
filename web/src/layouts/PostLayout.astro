@@ -117,6 +117,15 @@ const heroImageAttrs = imageAttrs(heroImage);
   </article>
 </BaseLayout>
 
+<script>
+  document.querySelectorAll<HTMLVideoElement>('video[data-playback-rate]').forEach((video) => {
+    const rate = Number(video.dataset.playbackRate);
+    if (Number.isFinite(rate) && rate > 0) {
+      video.playbackRate = rate;
+    }
+  });
+</script>
+
 <style>
   article {
     padding: 3rem 0 1rem;
