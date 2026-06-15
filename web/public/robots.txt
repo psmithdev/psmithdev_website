@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /api/og/
 Allow: /
 
 Sitemap: https://psmith.dev/sitemap-index.xml

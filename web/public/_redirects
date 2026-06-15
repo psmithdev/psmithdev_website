@@ -1,3 +1,6 @@
+# Sitemap aliases.
+/sitemap.xml                         /sitemap-index.xml                    301
+
 # Hashnode root slugs → new Astro paths (essays/making/tech → /posts/, travel → /travel/)
 /psychedelic-science-2023            /posts/psychedelic-science-2023/                  301
 /zen-meditation                      /posts/zen-meditation/                            301
@@ -28,6 +31,7 @@
 /posts/giant-wooden-hearts-on-the-connecticut-state-capitol-lawn /posts/giant-wooden-hearts-connecticut-state-capitol-lawn/ 301
 
 # Hashnode travel root slugs → /travel/
+/series/travel                       /travel/                               301
 /amsterdam-the-netherlands           /travel/amsterdam-the-netherlands/                301
 /london-united-kingdom               /travel/london-united-kingdom/                    301
 /berlin-germany                      /travel/berlin-germany/                           301
@@ -68,3 +72,6 @@
 # Removed stub post — redirect to home rather than 404.
 /posts/giraffehello                  /                                       301
 /giraffehello                        /                                       301
+
+# Retired Hashnode listing paths.
+/page/code                           /archive/                               301
