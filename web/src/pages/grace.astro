@@ -1,0 +1,310 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { imageAttrs } from '../utils/imageMetadata';
+
+const grandmotherImage =
+  'https://assets.psmith.dev/posts/a060c7d83b0972c3c5691fb909cb50a4012bf7ed23e93c72b556cc00675882cb.jpeg';
+---
+
+<BaseLayout
+  title="Why I’m Building Grace"
+  description="The personal story behind Grace, a warm evening call for families navigating sundowning."
+>
+  <article class="grace-page">
+    <header class="hero reading">
+      <p class="eyebrow">A project by Parker Smith</p>
+      <h1>Why I’m building Grace.</h1>
+      <p class="lede">
+        Grace is a warm evening phone call for a parent, with a short summary
+        for their family. I’m building it to bring a little more steadiness to
+        a difficult part of the day.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://callwithgrace.com">
+          Visit Grace <span aria-hidden="true">→</span>
+        </a>
+        <a class="button secondary" href="https://linkedin.com/in/parkersmith1/">
+          Connect on LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <figure class="family-photo wide">
+      <img
+        src={grandmotherImage}
+        alt="Parker with his grandmother"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        {...imageAttrs(grandmotherImage)}
+      />
+      <figcaption>My grandmother and me.</figcaption>
+    </figure>
+
+    <section class="story reading">
+      <p class="eyebrow">Something personal</p>
+      <h2>Care has always felt close to home.</h2>
+      <p>
+        My grandmother and my family shaped how I think about showing up for
+        people: with patience, warmth, and attention to the small things. Grace
+        grew from that same instinct—to make something useful for families who
+        want to be present, even when they cannot be in the room.
+      </p>
+      <p>
+        Sundowning can make evenings confusing and lonely for an older adult,
+        and exhausting for the people who love them. A familiar, reassuring
+        rhythm cannot solve everything. But sometimes a calm voice, at the
+        right time, can make the evening feel a little less hard.
+      </p>
+    </section>
+
+    <aside class="grace-note reading" aria-labelledby="what-grace-does">
+      <p class="eyebrow">What Grace does</p>
+      <h2 id="what-grace-does">One quiet call. One useful note.</h2>
+      <ul>
+        <li>Calls at a familiar time with a calm, patient voice.</li>
+        <li>Listens without correcting or arguing.</li>
+        <li>Sends the family a short summary after the call.</li>
+      </ul>
+      <p class="boundary">
+        Grace is a companion service, not a medical service or a replacement
+        for emergency care.
+      </p>
+    </aside>
+
+    <section class="story reading">
+      <p class="eyebrow">How I’m building it</p>
+      <h2>Carefully, and in the open.</h2>
+      <p>
+        I’m approaching Grace the way I approach anything I make: start with
+        the person it should serve, be honest about what it can and cannot do,
+        and keep refining the details until they feel considered.
+      </p>
+      <p>
+        I’m Parker Smith, the person designing and building Grace. If you are
+        caring for a parent and this feels familiar, I would be glad to hear
+        from you.
+      </p>
+      <p class="closing-links">
+        <a href="https://callwithgrace.com">Learn more about Grace</a>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:hello@callwithgrace.com">Email me</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .grace-page {
+    padding: 4.5rem 0 1rem;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero h1,
+  .story h2,
+  .grace-note h2 {
+    text-wrap: balance;
+  }
+
+  .hero h1 {
+    max-width: 11ch;
+    margin: 0.25rem auto 1rem;
+  }
+
+  .lede {
+    max-width: 34rem;
+    margin-inline: auto;
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    text-wrap: pretty;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.8rem;
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition-property: color, background-color, box-shadow, transform;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+  }
+
+  .button:active {
+    transform: scale(0.96);
+  }
+
+  .primary {
+    padding-left: 1rem;
+    padding-right: 0.875rem;
+    gap: 0.45rem;
+    background: var(--ink);
+    color: var(--bg);
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.06),
+      0 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .primary:hover {
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.08),
+      0 1px 2px -1px rgba(0, 0, 0, 0.08),
+      0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .secondary {
+    color: var(--ink-soft);
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.08),
+      0 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0 2px 4px rgba(0, 0, 0, 0.03);
+  }
+
+  .secondary:hover {
+    color: var(--accent);
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.12),
+      0 1px 2px -1px rgba(0, 0, 0, 0.08),
+      0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .family-photo {
+    max-width: 48rem;
+    margin-top: 4rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .family-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    outline-offset: -1px;
+  }
+
+  .story {
+    margin-top: 4rem;
+  }
+
+  .story h2,
+  .grace-note h2 {
+    margin-top: 0.25rem;
+  }
+
+  .story p:not(.eyebrow),
+  .grace-note li,
+  .boundary {
+    text-wrap: pretty;
+  }
+
+  .grace-note {
+    margin-top: 4rem;
+    padding-block: 2.2rem;
+    position: relative;
+  }
+
+  .grace-note::before,
+  .grace-note::after {
+    content: '';
+    position: absolute;
+    left: 1.2rem;
+    right: 1.2rem;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .grace-note::before {
+    top: 0;
+  }
+
+  .grace-note::after {
+    bottom: 0;
+  }
+
+  .grace-note ul {
+    padding-left: 1.2rem;
+  }
+
+  .grace-note li {
+    padding-left: 0.25rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .boundary {
+    color: var(--ink-soft);
+    font-size: var(--step--1);
+    font-family: var(--font-sans);
+  }
+
+  .closing-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+  }
+
+  .closing-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  @media (max-width: 540px) {
+    .grace-page {
+      padding-top: 2.8rem;
+    }
+
+    .actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .family-photo {
+      margin-top: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .story,
+    .grace-note {
+      margin-top: 3rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .button {
+      transition: none;
+    }
+
+    .button:active {
+      transform: none;
+    }
+  }
+</style>
