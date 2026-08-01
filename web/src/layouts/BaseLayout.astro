@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  titleSeparator?: string;
 }
 
 const {
@@ -15,10 +16,11 @@ const {
   description = 'Travel, essays, and things made by hand.',
   image,
   type = 'website',
+  titleSeparator = '—',
 } = Astro.props;
 
 const fullTitle =
-  title === 'Parker Smith' ? title : `${title} — Parker Smith`;
+  title === 'Parker Smith' ? title : `${title} ${titleSeparator} Parker Smith`;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = image
